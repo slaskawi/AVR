@@ -1,0 +1,390 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>URZYDZENIE STERUJACE OGRZEWANIEM Z WYKORZYSTANIEM MIKROKONTROLERA AVR: Plik źródłowy D:/CPP_pjojects/AVR/src/remote_choice.c</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Wygenerowano przez Doxygen 1.5.4 -->
+<div class="tabs">
+  <ul>
+    <li><a href="index.html"><span>Strona&nbsp;główna</span></a></li>
+    <li><a href="classes.html"><span>Klasy</span></a></li>
+    <li class="current"><a href="files.html"><span>Pliki</span></a></li>
+  </ul>
+</div>
+<h1>D:/CPP_pjojects/AVR/src/remote_choice.c</h1><a href="remote__choice_8c.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a><a class="code" href="remote__choice_8c.html#052b4d847b2896a551443be39d1dc268">00001</a> <a class="code" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a> <a class="code" href="remote__choice_8c.html#274e6f04a50175c7fc3494aaa5850c1e">_msec</a>, <a class="code" href="remote__choice_8c.html#97f7eefbf22cc5d55e882b3815c4f960">msec1</a>, <a class="code" href="remote__choice_8c.html#829224e56bc86013e756a62dcfd42e7a">_sec</a>, <a class="code" href="remote__choice_8c.html#052b4d847b2896a551443be39d1dc268">sec1</a>, <a class="code" href="remote__choice_8c.html#9c31ef70c6b2462de2f0ab7e6df977b1">_min</a>, <a class="code" href="remote__choice_8c.html#d59716252bf29c98b663100e23859f89">min1</a>, <a class="code" href="remote__choice_8c.html#377255b34163fa46843fd625bd22e070">_hour</a>, <a class="code" href="remote__choice_8c.html#a3adb7926cfcbc30ae1782f4dec5d639">hour1</a>, <a class="code" href="remote__choice_8c.html#ddb79d7c8126cc39b3ae813081925480">_day</a>, <a class="code" href="remote__choice_8c.html#ebf57b57af5afb0cab866eb1d88350b2">_month</a>;   <span class="comment">// aktualny czas                     </span>
+<a name="l00002"></a><a class="code" href="remote__choice_8c.html#a9dd1b097f15329da17e6d8a5a9767c6">00002</a> <a class="code" href="global_8h.html#9e6c91d77e24643b888dbd1a1a590054">u16</a> <a class="code" href="remote__choice_8c.html#a9dd1b097f15329da17e6d8a5a9767c6">_year</a>;
+<a name="l00003"></a>00003 
+<a name="l00004"></a><a class="code" href="remote__choice_8c.html#48e0ff158c8a0f42291b824de5867a3c">00004</a> <a class="code" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a> <a class="code" href="remote__choice_8c.html#48e0ff158c8a0f42291b824de5867a3c">indexTimer</a> = 0;
+<a name="l00005"></a>00005 
+<a name="l00006"></a>00006 
+<a name="l00007"></a><a class="code" href="remote__choice_8c.html#2b07fc4f4a062680410adefb08815d03">00007</a> <span class="keywordtype">void</span> <a class="code" href="remote__choice_8c.html#2b07fc4f4a062680410adefb08815d03">power_on</a> (<span class="keywordtype">void</span>)
+<a name="l00008"></a>00008 {
+<a name="l00009"></a>00009         <span class="comment">//LCD_clear();</span>
+<a name="l00010"></a>00010         <span class="comment">//PORTD &amp;=~(_BV(4));</span>
+<a name="l00011"></a>00011         <a class="code" href="lcd_8c.html#141c522273b40a24c797f18832cd7e48">LCD_gotoxy</a>(1,1);
+<a name="l00012"></a>00012         <a class="code" href="lcd_8c.html#a963da8f74770cdce347d9f074bf5261">LCD_puts</a>(<span class="stringliteral">"      Ready     "</span>);
+<a name="l00013"></a>00013         <span class="keywordflow">if</span>(<a class="code" href="global_8h.html#5bd37bd643c9890f2e534726291c21e0">m_requiresSettings</a> != <a class="code" href="global_8h.html#f1b90965e27ca63a959bd1e8ecd4baeb">SETTING_ALL</a>)
+<a name="l00014"></a>00014         {
+<a name="l00015"></a>00015                 <a class="code" href="lcd_8c.html#141c522273b40a24c797f18832cd7e48">LCD_gotoxy</a>(1,2);        
+<a name="l00016"></a>00016                 <a class="code" href="lcd_8c.html#a963da8f74770cdce347d9f074bf5261">LCD_puts</a>(<span class="stringliteral">"Change Settings!"</span>);   
+<a name="l00017"></a>00017         }       
+<a name="l00018"></a>00018 }
+<a name="l00019"></a>00019 
+<a name="l00020"></a><a class="code" href="remote__choice_8c.html#19562d96ecbcf8a223d3c38b39993fbf">00020</a> <span class="keywordtype">void</span> <a class="code" href="remote__choice_8c.html#19562d96ecbcf8a223d3c38b39993fbf">updateTime</a>()
+<a name="l00021"></a>00021 {
+<a name="l00022"></a>00022         <a class="code" href="pcf8583_8c.html#9adb57b105e0e9743f608a68cf4227d1">PCF8583_get_time</a>(&amp;<a class="code" href="remote__choice_8c.html#377255b34163fa46843fd625bd22e070">_hour</a>,&amp;<a class="code" href="remote__choice_8c.html#9c31ef70c6b2462de2f0ab7e6df977b1">_min</a>,&amp;<a class="code" href="remote__choice_8c.html#829224e56bc86013e756a62dcfd42e7a">_sec</a>,&amp;<a class="code" href="remote__choice_8c.html#274e6f04a50175c7fc3494aaa5850c1e">_msec</a>);
+<a name="l00023"></a>00023 }
+<a name="l00024"></a>00024 
+<a name="l00025"></a><a class="code" href="remote__choice_8c.html#ac4a0e0b4ad49cbbab8b2626204f9492">00025</a> <span class="keywordtype">void</span> <a class="code" href="remote__choice_8c.html#ac4a0e0b4ad49cbbab8b2626204f9492">updateTemperature</a>()
+<a name="l00026"></a>00026 {
+<a name="l00027"></a>00027         <span class="keywordflow">if</span>((<a class="code" href="remote__choice_8c.html#9c31ef70c6b2462de2f0ab7e6df977b1">_min</a> % 2) == 0 &amp;&amp; (<a class="code" href="remote__choice_8c.html#829224e56bc86013e756a62dcfd42e7a">_sec</a> &lt; 10))
+<a name="l00028"></a>00028         {
+<a name="l00029"></a>00029                 <a class="code" href="ds18b20_8c.html#f10a6053bfe9293d3624f03148615f26">get_temperatureSilent</a>();
+<a name="l00030"></a>00030         }
+<a name="l00031"></a>00031 }
+<a name="l00032"></a>00032 
+<a name="l00033"></a><a class="code" href="remote__choice_8c.html#c631b0e717a0bc940119122b77aaaa2c">00033</a> <span class="keywordtype">void</span> <a class="code" href="remote__choice_8c.html#c631b0e717a0bc940119122b77aaaa2c">dayNightDecision</a>()
+<a name="l00034"></a>00034 {
+<a name="l00035"></a>00035         <a class="code" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a> startTime = <a class="code" href="global_8h.html#3e645f4dc974db62cfd8b8be88d199ae">m_nightHour</a>;
+<a name="l00036"></a>00036         <a class="code" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a> stopTime = (startTime + <a class="code" href="global_8h.html#78ab78e62e6a971950f2b89cc216d857">m_nightLast</a>) % 24;
+<a name="l00037"></a>00037         <a class="code" href="lcd_8c.html#141c522273b40a24c797f18832cd7e48">LCD_gotoxy</a>(1,2);
+<a name="l00038"></a>00038         <a class="code" href="lcd_8c.html#8f14027724976cb685c9e32fcafa2dec">LCD_putint</a>(<a class="code" href="remote__choice_8c.html#377255b34163fa46843fd625bd22e070">_hour</a>,10);
+<a name="l00039"></a>00039         <a class="code" href="lcd_8c.html#a963da8f74770cdce347d9f074bf5261">LCD_puts</a>(<span class="stringliteral">":"</span>);
+<a name="l00040"></a>00040         <a class="code" href="lcd_8c.html#8f14027724976cb685c9e32fcafa2dec">LCD_putint</a>(<a class="code" href="remote__choice_8c.html#9c31ef70c6b2462de2f0ab7e6df977b1">_min</a>,10);
+<a name="l00041"></a>00041         <a class="code" href="lcd_8c.html#a963da8f74770cdce347d9f074bf5261">LCD_puts</a>(<span class="stringliteral">"/"</span>);
+<a name="l00042"></a>00042         <a class="code" href="lcd_8c.html#8f14027724976cb685c9e32fcafa2dec">LCD_putint</a>(startTime,10);
+<a name="l00043"></a>00043         <a class="code" href="lcd_8c.html#a963da8f74770cdce347d9f074bf5261">LCD_puts</a>(<span class="stringliteral">"/"</span>);
+<a name="l00044"></a>00044         <a class="code" href="lcd_8c.html#8f14027724976cb685c9e32fcafa2dec">LCD_putint</a>(stopTime,10);
+<a name="l00045"></a>00045         <a class="code" href="lcd_8c.html#a963da8f74770cdce347d9f074bf5261">LCD_puts</a>(<span class="stringliteral">"/"</span>);
+<a name="l00046"></a>00046         <span class="keywordflow">if</span>(<a class="code" href="remote__choice_8c.html#377255b34163fa46843fd625bd22e070">_hour</a> &gt;= startTime &amp;&amp; <a class="code" href="remote__choice_8c.html#377255b34163fa46843fd625bd22e070">_hour</a> &lt;= stopTime)
+<a name="l00047"></a>00047         {
+<a name="l00048"></a>00048                 <a class="code" href="lcd_8c.html#a963da8f74770cdce347d9f074bf5261">LCD_puts</a>(<span class="stringliteral">"N"</span>);
+<a name="l00049"></a>00049                 <span class="comment">//fusing condition</span>
+<a name="l00050"></a>00050                 <span class="keywordflow">if</span>(<a class="code" href="ds18b20_8c.html#af0b5970094358643a5f7564fecae9eb">m_currentTemperature</a> + <a class="code" href="global_8h.html#5208b9130be6938313166c5efd14b69f">m_offsetTemp</a> &lt; <a class="code" href="global_8h.html#eacdc3c8f4b1744bfadfc824d1540e8e">m_nightTemp</a>)
+<a name="l00051"></a>00051                 {
+<a name="l00052"></a>00052                         <span class="keywordflow">if</span>(<a class="code" href="global_8h.html#09fc204512cd0cbed8f0011006cb69c9">m_work</a> == 0)
+<a name="l00053"></a>00053                         {
+<a name="l00054"></a>00054                                 PORTD |=_BV(4); 
+<a name="l00055"></a>00055                         }
+<a name="l00056"></a>00056                         <span class="keywordflow">else</span>
+<a name="l00057"></a>00057                         {
+<a name="l00058"></a>00058                                 PORTD &amp;=~(_BV(4));
+<a name="l00059"></a>00059                                 <span class="comment">//UART_puts("night - fusing");  </span>
+<a name="l00060"></a>00060                         }       
+<a name="l00061"></a>00061                 }
+<a name="l00062"></a>00062                 <span class="keywordflow">else</span>
+<a name="l00063"></a>00063                 {
+<a name="l00064"></a>00064                         PORTD |=_BV(4); 
+<a name="l00065"></a>00065                 }
+<a name="l00066"></a>00066                 <span class="comment">//cooling condition</span>
+<a name="l00067"></a>00067                 <span class="keywordflow">if</span>(<a class="code" href="ds18b20_8c.html#af0b5970094358643a5f7564fecae9eb">m_currentTemperature</a>  &gt; (<a class="code" href="global_8h.html#eacdc3c8f4b1744bfadfc824d1540e8e">m_nightTemp</a> + <a class="code" href="global_8h.html#5208b9130be6938313166c5efd14b69f">m_offsetTemp</a>))
+<a name="l00068"></a>00068                 {
+<a name="l00069"></a>00069                         <span class="keywordflow">if</span>(<a class="code" href="global_8h.html#09fc204512cd0cbed8f0011006cb69c9">m_work</a> == 0)
+<a name="l00070"></a>00070                         {
+<a name="l00071"></a>00071                                 PORTD |=_BV(7); 
+<a name="l00072"></a>00072                         }
+<a name="l00073"></a>00073                         <span class="keywordflow">else</span>
+<a name="l00074"></a>00074                         {
+<a name="l00075"></a>00075                                 PORTD &amp;=~(_BV(7));
+<a name="l00076"></a>00076                                 <span class="comment">//UART_puts("night - cooling"); </span>
+<a name="l00077"></a>00077                         }       
+<a name="l00078"></a>00078                 }
+<a name="l00079"></a>00079                 <span class="keywordflow">else</span>
+<a name="l00080"></a>00080                 {
+<a name="l00081"></a>00081                         PORTD |=_BV(7); 
+<a name="l00082"></a>00082                 }
+<a name="l00083"></a>00083         }
+<a name="l00084"></a>00084         <span class="keywordflow">else</span>
+<a name="l00085"></a>00085         {
+<a name="l00086"></a>00086                 <a class="code" href="lcd_8c.html#a963da8f74770cdce347d9f074bf5261">LCD_puts</a>(<span class="stringliteral">"D"</span>);
+<a name="l00087"></a>00087                 <span class="comment">//day fusing</span>
+<a name="l00088"></a>00088                 <span class="keywordflow">if</span>((<a class="code" href="ds18b20_8c.html#af0b5970094358643a5f7564fecae9eb">m_currentTemperature</a> + <a class="code" href="global_8h.html#5208b9130be6938313166c5efd14b69f">m_offsetTemp</a>) &lt; <a class="code" href="global_8h.html#6a4240e5f794fb776a59105323a7445e">m_dayTemp</a>)
+<a name="l00089"></a>00089                 {
+<a name="l00090"></a>00090                         <span class="keywordflow">if</span>(<a class="code" href="global_8h.html#09fc204512cd0cbed8f0011006cb69c9">m_work</a> == 0)
+<a name="l00091"></a>00091                         {
+<a name="l00092"></a>00092                                 PORTD |=_BV(4);
+<a name="l00093"></a>00093                         }
+<a name="l00094"></a>00094                         <span class="keywordflow">else</span>
+<a name="l00095"></a>00095                         {
+<a name="l00096"></a>00096                                 PORTD &amp;=~(_BV(4));
+<a name="l00097"></a>00097                                 <span class="comment">//UART_puts("day - fusing");</span>
+<a name="l00098"></a>00098                         }
+<a name="l00099"></a>00099                 }
+<a name="l00100"></a>00100                 <span class="keywordflow">else</span>
+<a name="l00101"></a>00101                 {
+<a name="l00102"></a>00102                         PORTD |=_BV(4);
+<a name="l00103"></a>00103                 }       
+<a name="l00104"></a>00104                 <span class="comment">//day cooling condition</span>
+<a name="l00105"></a>00105                 <span class="keywordflow">if</span>(<a class="code" href="ds18b20_8c.html#af0b5970094358643a5f7564fecae9eb">m_currentTemperature</a> &gt; (<a class="code" href="global_8h.html#6a4240e5f794fb776a59105323a7445e">m_dayTemp</a> + <a class="code" href="global_8h.html#5208b9130be6938313166c5efd14b69f">m_offsetTemp</a>))
+<a name="l00106"></a>00106                 {
+<a name="l00107"></a>00107                         <span class="keywordflow">if</span>(<a class="code" href="global_8h.html#09fc204512cd0cbed8f0011006cb69c9">m_work</a> == 0)
+<a name="l00108"></a>00108                         {
+<a name="l00109"></a>00109                                 PORTD |=_BV(7);
+<a name="l00110"></a>00110                         }
+<a name="l00111"></a>00111                         <span class="keywordflow">else</span>
+<a name="l00112"></a>00112                         {
+<a name="l00113"></a>00113                                 PORTD &amp;=~(_BV(7));
+<a name="l00114"></a>00114                                 <span class="comment">//UART_puts("day - fusing");</span>
+<a name="l00115"></a>00115                         }
+<a name="l00116"></a>00116                 }
+<a name="l00117"></a>00117                 <span class="keywordflow">else</span>
+<a name="l00118"></a>00118                 {
+<a name="l00119"></a>00119                         PORTD |=_BV(7);
+<a name="l00120"></a>00120                 }       
+<a name="l00121"></a>00121         }
+<a name="l00122"></a>00122         <a class="code" href="lcd_8c.html#a963da8f74770cdce347d9f074bf5261">LCD_puts</a>(<span class="stringliteral">"/"</span>);
+<a name="l00123"></a>00123         <a class="code" href="lcd_8c.html#8f14027724976cb685c9e32fcafa2dec">LCD_putint</a>(<a class="code" href="ds18b20_8c.html#af0b5970094358643a5f7564fecae9eb">m_currentTemperature</a>,10);
+<a name="l00124"></a>00124 }
+<a name="l00125"></a>00125 
+<a name="l00126"></a><a class="code" href="remote__choice_8c.html#dc309d405327b4e698ed1bb12d789d4b">00126</a> <a class="code" href="remote__choice_8c.html#dc309d405327b4e698ed1bb12d789d4b">remote_switch</a> (<a class="code" href="global_8h.html#9e6c91d77e24643b888dbd1a1a590054">u16</a> decode_value)
+<a name="l00127"></a>00127 {
+<a name="l00128"></a>00128         <a class="code" href="global_8h.html#9e6c91d77e24643b888dbd1a1a590054">u16</a> <a class="code" href="unionu16convert.html#ede0039ca7a0109c54ae285ba9942fcb">value</a>; 
+<a name="l00129"></a>00129         
+<a name="l00130"></a>00130         <span class="keywordflow">switch</span> (decode_value)
+<a name="l00131"></a>00131                 {                       
+<a name="l00132"></a>00132                         <span class="keywordflow">case</span> <a class="code" href="global_8h.html#c1c4669bb83df8f8617e6d20a62a6c09">KEY_POWER</a>:         <span class="comment">// power on/off</span>
+<a name="l00133"></a>00133                                 {
+<a name="l00134"></a>00134                                         <a class="code" href="remote__choice_8c.html#2b07fc4f4a062680410adefb08815d03">power_on</a>();     
+<a name="l00135"></a>00135                                         <span class="keywordflow">break</span>;                  
+<a name="l00136"></a>00136                                 }                               
+<a name="l00137"></a>00137                                 
+<a name="l00138"></a>00138                                 
+<a name="l00139"></a>00139                         <span class="keywordflow">case</span> <a class="code" href="global_8h.html#7d55ecb49176103d99402b58b6a0392b">KEY_TEMPERATURE</a>:           <span class="comment">// temperature</span>
+<a name="l00140"></a>00140                                 {
+<a name="l00141"></a>00141 <span class="comment">//                                      if ( bit_is_clear(PIND, 4) )</span>
+<a name="l00142"></a>00142 <span class="comment">//                                      {                                               </span>
+<a name="l00143"></a>00143                                                 <a class="code" href="lcd_8c.html#b3d3c08a4027d3e918914c1562ced027">LCD_clear</a>();
+<a name="l00144"></a>00144                                                 <a class="code" href="lcd_8c.html#a963da8f74770cdce347d9f074bf5261">LCD_puts</a>(<span class="stringliteral">"  Temperature:  "</span>);
+<a name="l00145"></a>00145                                                 <a class="code" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a> i = 0;
+<a name="l00146"></a>00146                                                 
+<a name="l00147"></a>00147                                                 <span class="keywordflow">while</span>(1)
+<a name="l00148"></a>00148                                                 {
+<a name="l00149"></a>00149                                                         
+<a name="l00150"></a>00150                                                         i = 0;
+<a name="l00151"></a>00151                                                         <span class="keywordflow">while</span>( i &lt; 6)
+<a name="l00152"></a>00152                                                         {
+<a name="l00153"></a>00153                                                                 value = <a class="code" href="rc5_8c.html#a5b6b63f55d4750c6edcd3d7a54daa11">decode_rc5</a>();
+<a name="l00154"></a>00154                                                                 <span class="keywordflow">if</span>(value != 0)
+<a name="l00155"></a>00155                                                                 {
+<a name="l00156"></a>00156                                                                         <a class="code" href="lcd_8c.html#b3d3c08a4027d3e918914c1562ced027">LCD_clear</a>();
+<a name="l00157"></a>00157                                                                         <a class="code" href="remote__choice_8c.html#2b07fc4f4a062680410adefb08815d03">power_on</a>();
+<a name="l00158"></a>00158                                                                         <span class="keywordflow">return</span>;
+<a name="l00159"></a>00159                                                                 }
+<a name="l00160"></a>00160                                                                 i++;
+<a name="l00161"></a>00161                                                         };      
+<a name="l00162"></a>00162                                                         i = 0;
+<a name="l00163"></a>00163                                                         <span class="keywordflow">while</span>( i &lt; 3)
+<a name="l00164"></a>00164                                                         {                                                       
+<a name="l00165"></a>00165                                                                 <a class="code" href="ds18b20_8c.html#b3d3e238d9d0c2bb7472549094baed19">get_temperature</a>();
+<a name="l00166"></a>00166                                                                 i++;
+<a name="l00167"></a>00167                                                         };
+<a name="l00168"></a>00168                                                         <span class="keywordflow">if</span> (bit_is_clear(PINA, 7))
+<a name="l00169"></a>00169                                                         {
+<a name="l00170"></a>00170                                                                 <a class="code" href="lcd_8c.html#b3d3c08a4027d3e918914c1562ced027">LCD_clear</a>();
+<a name="l00171"></a>00171                                                                 <a class="code" href="remote__choice_8c.html#2b07fc4f4a062680410adefb08815d03">power_on</a>();
+<a name="l00172"></a>00172                                                                 <span class="keywordflow">break</span>;
+<a name="l00173"></a>00173                                                         }                                                       
+<a name="l00174"></a>00174                                                 }                                               
+<a name="l00175"></a>00175 <span class="comment">//                                      }</span>
+<a name="l00176"></a>00176                                         <span class="keywordflow">break</span>;
+<a name="l00177"></a>00177                                 }
+<a name="l00178"></a>00178                                 
+<a name="l00179"></a>00179                                 
+<a name="l00180"></a>00180                         <span class="keywordflow">case</span> <a class="code" href="global_8h.html#a0083d8381a219afff6c5b192ba6d1a6">KEY_TIMER</a>:         <span class="comment">// zegarek</span>
+<a name="l00181"></a>00181                                 {
+<a name="l00182"></a>00182 <span class="comment">//                                      if ( bit_is_clear(PORTD, 4) )</span>
+<a name="l00183"></a>00183 <span class="comment">//                                      {</span>
+<a name="l00184"></a>00184                                                 <a class="code" href="lcd_8c.html#b3d3c08a4027d3e918914c1562ced027">LCD_clear</a>();                                            
+<a name="l00185"></a>00185                                                 <span class="keywordflow">do</span>
+<a name="l00186"></a>00186                                                 {
+<a name="l00187"></a>00187                                                         <a class="code" href="lcd_8c.html#a963da8f74770cdce347d9f074bf5261">LCD_puts</a>(<span class="stringliteral">"     Clock     "</span>);
+<a name="l00188"></a>00188                                                         <a class="code" href="timer__menu_8c.html#06bc7a366514599179bc2250e2efdbc6">watch</a>();
+<a name="l00189"></a>00189                                                         value = <a class="code" href="rc5_8c.html#a5b6b63f55d4750c6edcd3d7a54daa11">decode_rc5</a>();                                                   
+<a name="l00190"></a>00190                                                         <span class="keywordflow">if</span> ( value == <a class="code" href="global_8h.html#004194639b9ad76cea01d9e93716d4d6">KEY_RIGHT</a> )
+<a name="l00191"></a>00191                                                         {
+<a name="l00192"></a>00192                                                                 <a class="code" href="lcd_8c.html#b3d3c08a4027d3e918914c1562ced027">LCD_clear</a>();
+<a name="l00193"></a>00193                                                                 <a class="code" href="lcd_8c.html#a963da8f74770cdce347d9f074bf5261">LCD_puts</a>(<span class="stringliteral">"      Date      "</span>);
+<a name="l00194"></a>00194                                                                 <span class="keywordflow">do</span>
+<a name="l00195"></a>00195                                                                 {
+<a name="l00196"></a>00196                                                                         <a class="code" href="timer__menu_8c.html#fa90e2d9b244c45c3db0144f183e8220">date</a>();
+<a name="l00197"></a>00197                                                                         value = <a class="code" href="rc5_8c.html#a5b6b63f55d4750c6edcd3d7a54daa11">decode_rc5</a>();
+<a name="l00198"></a>00198                                                                         <span class="keywordflow">if</span> ( value == <a class="code" href="global_8h.html#004194639b9ad76cea01d9e93716d4d6">KEY_RIGHT</a> )
+<a name="l00199"></a>00199                                                                         {
+<a name="l00200"></a>00200                                                                                 
+<a name="l00201"></a>00201                                                                                 <span class="comment">//ustawienia temp</span>
+<a name="l00202"></a>00202                                                                                 <a class="code" href="lcd_8c.html#b3d3c08a4027d3e918914c1562ced027">LCD_clear</a>();
+<a name="l00203"></a>00203                                                                                 <a class="code" href="temp_8c.html#ab7c15962a6533eca8e786879762d157">temp_show</a>();                                                                            
+<a name="l00204"></a>00204                                                                                 <span class="comment">//stoper_init();</span>
+<a name="l00205"></a>00205                                                                                 <span class="comment">//stoper_show();                                                                                </span>
+<a name="l00206"></a>00206                                                                                 <span class="keywordflow">do</span>
+<a name="l00207"></a>00207                                                                                 {
+<a name="l00208"></a>00208                                                                                         value = <a class="code" href="rc5_8c.html#a5b6b63f55d4750c6edcd3d7a54daa11">decode_rc5</a>();
+<a name="l00209"></a>00209                                                                                         <span class="keywordflow">if</span> ( value == <a class="code" href="global_8h.html#baee5edb96e542206ae6c8102ac228af">KEY_ENTER</a> )
+<a name="l00210"></a>00210                                                                                         {                                                                                       
+<a name="l00211"></a>00211 <span class="comment">//                                                                                              do</span>
+<a name="l00212"></a>00212 <span class="comment">//                                                                                              {                                                                                                       </span>
+<a name="l00213"></a>00213                                                                                                         <span class="comment">//stoper_run();</span>
+<a name="l00214"></a>00214                                                                                                         <a class="code" href="temp_8c.html#462107041fb6c80da76ca71587937f4d">set_temp_init</a>();
+<a name="l00215"></a>00215                                                                                                         value = <a class="code" href="rc5_8c.html#a5b6b63f55d4750c6edcd3d7a54daa11">decode_rc5</a>();
+<a name="l00216"></a>00216 <span class="comment">//                                                                                              }</span>
+<a name="l00217"></a>00217 <span class="comment">//                                                                                              while( !(value == KEY_ENTER) );</span>
+<a name="l00218"></a>00218                                                                                         }                                                                                       
+<a name="l00219"></a>00219                                                                                         <span class="keywordflow">else</span>
+<a name="l00220"></a>00220                                                                                         <span class="keywordflow">if</span> ( value == <a class="code" href="global_8h.html#59aacfdd03dee071217bd596cce241c8">KEY_RESET</a> )  <span class="comment">//reset stopera</span>
+<a name="l00221"></a>00221                                                                                         {
+<a name="l00222"></a>00222                                                                                                 <span class="comment">//stoper_show();</span>
+<a name="l00223"></a>00223                                                                                                 <a class="code" href="remote__choice_8c.html#a3adb7926cfcbc30ae1782f4dec5d639">hour1</a> = 0, <a class="code" href="remote__choice_8c.html#d59716252bf29c98b663100e23859f89">min1</a> = 0, <a class="code" href="remote__choice_8c.html#052b4d847b2896a551443be39d1dc268">sec1</a> = 0, <a class="code" href="remote__choice_8c.html#97f7eefbf22cc5d55e882b3815c4f960">msec1</a> = 0;
+<a name="l00224"></a>00224                                                                                                 
+<a name="l00225"></a>00225                                                                                         }
+<a name="l00226"></a>00226                                                                                         <span class="keywordflow">else</span>
+<a name="l00227"></a>00227                                                                                         <span class="keywordflow">if</span> ( value == <a class="code" href="global_8h.html#004194639b9ad76cea01d9e93716d4d6">KEY_RIGHT</a> )
+<a name="l00228"></a>00228                                                                                         {
+<a name="l00229"></a>00229                                                                                                 <a class="code" href="timer__menu_8c.html#73409a84ebaef2d1cbeb7119de33c1b0">set_time_show</a>();
+<a name="l00230"></a>00230                                                                                                 <span class="keywordflow">do</span>
+<a name="l00231"></a>00231                                                                                                 {
+<a name="l00232"></a>00232                                                                                                         value = <a class="code" href="rc5_8c.html#a5b6b63f55d4750c6edcd3d7a54daa11">decode_rc5</a>();
+<a name="l00233"></a>00233                                                                                                         <span class="keywordflow">if</span> ( value == <a class="code" href="global_8h.html#baee5edb96e542206ae6c8102ac228af">KEY_ENTER</a> )
+<a name="l00234"></a>00234                                                                                                                 <a class="code" href="timer__menu_8c.html#9403d309efb5b1f3edf2cfd4a0719314">set_time_init</a>();
+<a name="l00235"></a>00235                                                                                                         <span class="keywordflow">else</span>
+<a name="l00236"></a>00236                                                                                                         <span class="keywordflow">if</span> ( value == <a class="code" href="global_8h.html#004194639b9ad76cea01d9e93716d4d6">KEY_RIGHT</a> )
+<a name="l00237"></a>00237                                                                                                         {
+<a name="l00238"></a>00238                                                                                                                 <a class="code" href="timer__menu_8c.html#2a5270a6882ad44181d50e02220723dc">set_date_show</a>();
+<a name="l00239"></a>00239                                                                                                                 <span class="keywordflow">do</span>
+<a name="l00240"></a>00240                                                                                                                 {
+<a name="l00241"></a>00241                                                                                                                         value = <a class="code" href="rc5_8c.html#a5b6b63f55d4750c6edcd3d7a54daa11">decode_rc5</a>();
+<a name="l00242"></a>00242                                                                                                                         <span class="keywordflow">if</span> ( value == <a class="code" href="global_8h.html#baee5edb96e542206ae6c8102ac228af">KEY_ENTER</a> )
+<a name="l00243"></a>00243                                                                                                                                 <a class="code" href="timer__menu_8c.html#b70fb71187cbf7299cd49db38284f227">set_date_init</a>();
+<a name="l00244"></a>00244                                                                                                                         <span class="keywordflow">else</span>
+<a name="l00245"></a>00245                                                                                                                         <span class="keywordflow">if</span> ( value == <a class="code" href="global_8h.html#004194639b9ad76cea01d9e93716d4d6">KEY_RIGHT</a> )
+<a name="l00246"></a>00246                                                                                                                         {
+<a name="l00247"></a>00247                                                                                                                                 <a class="code" href="timer__menu_8c.html#b56e2547995b88bc8ca6f77fe43a9f54">set_nightTime_show</a>();
+<a name="l00248"></a>00248                                                                                                                                 <span class="keywordflow">do</span>
+<a name="l00249"></a>00249                                                                                                                                 {
+<a name="l00250"></a>00250                                                                                                                                         value = <a class="code" href="rc5_8c.html#a5b6b63f55d4750c6edcd3d7a54daa11">decode_rc5</a>();                                                                                                                                   
+<a name="l00251"></a>00251                                                                                                                                         <span class="keywordflow">if</span> ( value == <a class="code" href="global_8h.html#baee5edb96e542206ae6c8102ac228af">KEY_ENTER</a> )
+<a name="l00252"></a>00252                                                                                                                                                 <a class="code" href="timer__menu_8c.html#1a243b4c4639601eb9dafca75d65ddc6">set_nightTime_init</a>();
+<a name="l00253"></a>00253                                                                                                                                 }
+<a name="l00254"></a>00254                                                                                                                                 <span class="keywordflow">while</span> ( !((value == <a class="code" href="global_8h.html#f4d1b8a2912354646c74cf36c69f8223">KEY_LEFT</a>) | (value == <a class="code" href="global_8h.html#a0083d8381a219afff6c5b192ba6d1a6">KEY_TIMER</a>) | (value == <a class="code" href="global_8h.html#c1c4669bb83df8f8617e6d20a62a6c09">KEY_POWER</a>)) );
+<a name="l00255"></a>00255                                                                                                                                 value = 1;
+<a name="l00256"></a>00256                                                                                                                                 <a class="code" href="timer__menu_8c.html#2a5270a6882ad44181d50e02220723dc">set_date_show</a>();
+<a name="l00257"></a>00257                                                                                                                         }                                                                                                                       
+<a name="l00258"></a>00258                                                                                                                 }
+<a name="l00259"></a>00259                                                                                                                 <span class="keywordflow">while</span> ( !((value == <a class="code" href="global_8h.html#f4d1b8a2912354646c74cf36c69f8223">KEY_LEFT</a>) | (value == <a class="code" href="global_8h.html#a0083d8381a219afff6c5b192ba6d1a6">KEY_TIMER</a>) | (value == <a class="code" href="global_8h.html#c1c4669bb83df8f8617e6d20a62a6c09">KEY_POWER</a>)) );
+<a name="l00260"></a>00260                                                                                                                 value = 1;
+<a name="l00261"></a>00261                                                                                                                 <a class="code" href="timer__menu_8c.html#73409a84ebaef2d1cbeb7119de33c1b0">set_time_show</a>();
+<a name="l00262"></a>00262                                                                                                         }
+<a name="l00263"></a>00263                                                                                                 }
+<a name="l00264"></a>00264                                                                                                 <span class="keywordflow">while</span> ( !((value == <a class="code" href="global_8h.html#f4d1b8a2912354646c74cf36c69f8223">KEY_LEFT</a>) | (value == <a class="code" href="global_8h.html#a0083d8381a219afff6c5b192ba6d1a6">KEY_TIMER</a>) | (value == <a class="code" href="global_8h.html#c1c4669bb83df8f8617e6d20a62a6c09">KEY_POWER</a>)) );                                                 
+<a name="l00265"></a>00265                                                                                                 value = 1;
+<a name="l00266"></a>00266                                                                                                 <a class="code" href="lcd_8c.html#b3d3c08a4027d3e918914c1562ced027">LCD_clear</a>();
+<a name="l00267"></a>00267                                                                                                 <a class="code" href="temp_8c.html#ab7c15962a6533eca8e786879762d157">temp_show</a>();
+<a name="l00268"></a>00268                                                                                                 <span class="comment">//stoper_show();</span>
+<a name="l00269"></a>00269                                                                                                 <a class="code" href="remote__choice_8c.html#a3adb7926cfcbc30ae1782f4dec5d639">hour1</a> = 0; <a class="code" href="remote__choice_8c.html#d59716252bf29c98b663100e23859f89">min1</a> = 0; <a class="code" href="remote__choice_8c.html#052b4d847b2896a551443be39d1dc268">sec1</a> = 0; <a class="code" href="remote__choice_8c.html#97f7eefbf22cc5d55e882b3815c4f960">msec1</a> = 0;                                                                                               
+<a name="l00270"></a>00270                                                                                         }
+<a name="l00271"></a>00271                                                                                 }       
+<a name="l00272"></a>00272                                                                                 <span class="keywordflow">while</span> ( !((value == <a class="code" href="global_8h.html#f4d1b8a2912354646c74cf36c69f8223">KEY_LEFT</a>) | (value == <a class="code" href="global_8h.html#a0083d8381a219afff6c5b192ba6d1a6">KEY_TIMER</a>) | (value == <a class="code" href="global_8h.html#c1c4669bb83df8f8617e6d20a62a6c09">KEY_POWER</a>)) );
+<a name="l00273"></a>00273                                                                                 <span class="keywordflow">if</span> (value == <a class="code" href="global_8h.html#f4d1b8a2912354646c74cf36c69f8223">KEY_LEFT</a>)
+<a name="l00274"></a>00274                                                                                 {
+<a name="l00275"></a>00275                                                                                         value = 1;
+<a name="l00276"></a>00276                                                                                         <a class="code" href="lcd_8c.html#b3d3c08a4027d3e918914c1562ced027">LCD_clear</a>();
+<a name="l00277"></a>00277                                                                                         <a class="code" href="lcd_8c.html#a963da8f74770cdce347d9f074bf5261">LCD_puts</a>(<span class="stringliteral">"      Date      "</span>);
+<a name="l00278"></a>00278                                                                                 }
+<a name="l00279"></a>00279                                                                         }                                                               
+<a name="l00280"></a>00280                                                                 }
+<a name="l00281"></a>00281                                                                 <span class="keywordflow">while</span>( !((value == <a class="code" href="global_8h.html#f4d1b8a2912354646c74cf36c69f8223">KEY_LEFT</a>) | (value == <a class="code" href="global_8h.html#a0083d8381a219afff6c5b192ba6d1a6">KEY_TIMER</a>) | (value == <a class="code" href="global_8h.html#c1c4669bb83df8f8617e6d20a62a6c09">KEY_POWER</a>)) ); 
+<a name="l00282"></a>00282                                                                 <a class="code" href="lcd_8c.html#b3d3c08a4027d3e918914c1562ced027">LCD_clear</a>();                                                            
+<a name="l00283"></a>00283                                                         }
+<a name="l00284"></a>00284                                                 }
+<a name="l00285"></a>00285                                                 <span class="keywordflow">while</span>( !((value == <a class="code" href="global_8h.html#a0083d8381a219afff6c5b192ba6d1a6">KEY_TIMER</a>) | (value == <a class="code" href="global_8h.html#c1c4669bb83df8f8617e6d20a62a6c09">KEY_POWER</a>)) );
+<a name="l00286"></a>00286                                                 <a class="code" href="remote__choice_8c.html#2b07fc4f4a062680410adefb08815d03">power_on</a>();
+<a name="l00287"></a>00287 <span class="comment">//                                              break;</span>
+<a name="l00288"></a>00288 <span class="comment">//                                      }                                       </span>
+<a name="l00289"></a>00289                                         <span class="keywordflow">break</span>;                                  
+<a name="l00290"></a>00290                                 }
+<a name="l00291"></a>00291                                 
+<a name="l00292"></a>00292                                 
+<a name="l00293"></a>00293                         <span class="keywordflow">case</span> <a class="code" href="global_8h.html#4be8dfe64c5ebebff363664fafef3eed">KEY_OPTIONS</a>:
+<a name="l00294"></a>00294                                 {
+<a name="l00295"></a>00295 <span class="comment">//                                      if ( bit_is_clear(PORTD, 4) )</span>
+<a name="l00296"></a>00296 <span class="comment">//                                      {</span>
+<a name="l00297"></a>00297                                                 <a class="code" href="options__menu_8c.html#44e6cba7680a57de312dde0c74cad2b6">options_show</a>(); 
+<a name="l00298"></a>00298                                                 <span class="keywordflow">do</span>
+<a name="l00299"></a>00299                                                 {
+<a name="l00300"></a>00300                                                         value = <a class="code" href="rc5_8c.html#a5b6b63f55d4750c6edcd3d7a54daa11">decode_rc5</a>();
+<a name="l00301"></a>00301                                                         <span class="keywordflow">if</span> ( value == <a class="code" href="global_8h.html#004194639b9ad76cea01d9e93716d4d6">KEY_RIGHT</a> )
+<a name="l00302"></a>00302                                                         {
+<a name="l00303"></a>00303                                                                 <a class="code" href="options__menu_8c.html#8f9a5a9c60f15fdb5f1b847a4bc97c5a">work_settings_show</a>();                                                           
+<a name="l00304"></a>00304                                                                 <span class="keywordflow">do</span>
+<a name="l00305"></a>00305                                                                 {
+<a name="l00306"></a>00306                                                                         value = <a class="code" href="rc5_8c.html#a5b6b63f55d4750c6edcd3d7a54daa11">decode_rc5</a>();
+<a name="l00307"></a>00307                                                                         <span class="keywordflow">if</span> ( (value == <a class="code" href="global_8h.html#baee5edb96e542206ae6c8102ac228af">KEY_ENTER</a>) &amp; ( bit_is_clear(PIND, 5) ) )
+<a name="l00308"></a>00308                                                                                 <a class="code" href="options__menu_8c.html#71b6050846d4159024eea861c6ec3982">work_off</a>();
+<a name="l00309"></a>00309                                                                         <span class="keywordflow">else</span> 
+<a name="l00310"></a>00310                                                                         <span class="keywordflow">if</span> ( (value == <a class="code" href="global_8h.html#baee5edb96e542206ae6c8102ac228af">KEY_ENTER</a>) &amp; ( !(bit_is_clear(PIND, 5)) ) )
+<a name="l00311"></a>00311                                                                                 <a class="code" href="options__menu_8c.html#32d3f966cd7b083951d23505df155d4a">work_on</a>();
+<a name="l00312"></a>00312                                                                                 
+<a name="l00313"></a>00313                                                                         <span class="keywordflow">if</span> ( value == <a class="code" href="global_8h.html#004194639b9ad76cea01d9e93716d4d6">KEY_RIGHT</a> )
+<a name="l00314"></a>00314                                                                         {
+<a name="l00315"></a>00315                                                                                 <a class="code" href="options__menu_8c.html#89397d621cd435013cba9949f18bdac7">PC_connection_show</a>();
+<a name="l00316"></a>00316                                                                                 
+<a name="l00317"></a>00317                                                                                 <span class="keywordflow">do</span>
+<a name="l00318"></a>00318                                                                                 {
+<a name="l00319"></a>00319                                                                                         value = <a class="code" href="rc5_8c.html#a5b6b63f55d4750c6edcd3d7a54daa11">decode_rc5</a>();
+<a name="l00320"></a>00320                                                                                         <span class="keywordflow">if</span> ( (value == <a class="code" href="global_8h.html#baee5edb96e542206ae6c8102ac228af">KEY_ENTER</a>) &amp; ( bit_is_clear(PIND, 6) ) )
+<a name="l00321"></a>00321                                                                                                 <a class="code" href="options__menu_8c.html#d24da918750c7beca4242f6632361a87">PC_connection_disable</a>();
+<a name="l00322"></a>00322                                                                                         <span class="keywordflow">else</span> 
+<a name="l00323"></a>00323                                                                                                 <span class="keywordflow">if</span> ( (value == <a class="code" href="global_8h.html#baee5edb96e542206ae6c8102ac228af">KEY_ENTER</a>) &amp; ( !(bit_is_clear(PIND, 6)) ) )
+<a name="l00324"></a>00324                                                                                                 <a class="code" href="options__menu_8c.html#2fbc7f0d00c9d8917c9a388a8de8db9b">PC_connection_enable</a>();
+<a name="l00325"></a>00325                                                                                 }
+<a name="l00326"></a>00326                                                                                 <span class="keywordflow">while</span> ( !((value == <a class="code" href="global_8h.html#f4d1b8a2912354646c74cf36c69f8223">KEY_LEFT</a>) | (value == <a class="code" href="global_8h.html#4be8dfe64c5ebebff363664fafef3eed">KEY_OPTIONS</a>) | (value == <a class="code" href="global_8h.html#c1c4669bb83df8f8617e6d20a62a6c09">KEY_POWER</a>)) );
+<a name="l00327"></a>00327                                                                                 value = 1;
+<a name="l00328"></a>00328                                                                                 <a class="code" href="options__menu_8c.html#8f9a5a9c60f15fdb5f1b847a4bc97c5a">work_settings_show</a>();
+<a name="l00329"></a>00329                                                                         }                                                                       
+<a name="l00330"></a>00330                                                                 }
+<a name="l00331"></a>00331                                                                 <span class="keywordflow">while</span> ( !((value == <a class="code" href="global_8h.html#f4d1b8a2912354646c74cf36c69f8223">KEY_LEFT</a>) | (value == <a class="code" href="global_8h.html#4be8dfe64c5ebebff363664fafef3eed">KEY_OPTIONS</a>) | (value == <a class="code" href="global_8h.html#c1c4669bb83df8f8617e6d20a62a6c09">KEY_POWER</a>)) );
+<a name="l00332"></a>00332                                                                 value = 1;
+<a name="l00333"></a>00333                                                                 <a class="code" href="options__menu_8c.html#44e6cba7680a57de312dde0c74cad2b6">options_show</a>(); 
+<a name="l00334"></a>00334                                                         }
+<a name="l00335"></a>00335                                                 }
+<a name="l00336"></a>00336                                                 <span class="keywordflow">while</span>( !((value == <a class="code" href="global_8h.html#4be8dfe64c5ebebff363664fafef3eed">KEY_OPTIONS</a>) | (value == <a class="code" href="global_8h.html#c1c4669bb83df8f8617e6d20a62a6c09">KEY_POWER</a>)) );                                              
+<a name="l00337"></a>00337                                                 <a class="code" href="remote__choice_8c.html#2b07fc4f4a062680410adefb08815d03">power_on</a>();                                             
+<a name="l00338"></a>00338 <span class="comment">//                                      }</span>
+<a name="l00339"></a>00339                                         <span class="keywordflow">break</span>;
+<a name="l00340"></a>00340                                 }                               
+<a name="l00341"></a>00341                                 
+<a name="l00342"></a>00342                                 
+<a name="l00343"></a>00343                         <span class="keywordflow">case</span> 16269:
+<a name="l00344"></a>00344                                 {
+<a name="l00345"></a>00345 <span class="comment">//                                      if ( bit_is_clear(PORTD, 4) )</span>
+<a name="l00346"></a>00346 <span class="comment">//                                      {</span>
+<a name="l00347"></a>00347                                                 <a class="code" href="lcd_8c.html#b3d3c08a4027d3e918914c1562ced027">LCD_clear</a>();
+<a name="l00348"></a>00348                                                 <span class="keywordflow">do</span>
+<a name="l00349"></a>00349                                                 {
+<a name="l00350"></a>00350                                                         <span class="keywordflow">while</span> ( <a class="code" href="uart_8c.html#3e8ace2b62257b2f93d7c8d4f1fef48a">UART_unread_data</a>() )
+<a name="l00351"></a>00351                                                         <a class="code" href="uart_8c.html#17a89f0f18fedc7e2a69b483be9fcd25">UART_putc</a>( <a class="code" href="uart_8c.html#ef231bfe1354febc924f818d22bb2d85">UART_getc</a>() );
+<a name="l00352"></a>00352                                                         value = <a class="code" href="rc5_8c.html#a5b6b63f55d4750c6edcd3d7a54daa11">decode_rc5</a>();
+<a name="l00353"></a>00353                                                 }
+<a name="l00354"></a>00354                                                 <span class="keywordflow">while</span> ( !((value == 16269) | (value == <a class="code" href="global_8h.html#c1c4669bb83df8f8617e6d20a62a6c09">KEY_POWER</a>)) );
+<a name="l00355"></a>00355                                                 <a class="code" href="remote__choice_8c.html#2b07fc4f4a062680410adefb08815d03">power_on</a>();                                             
+<a name="l00356"></a>00356 <span class="comment">//                                      }                                       </span>
+<a name="l00357"></a>00357                                         <span class="keywordflow">break</span>;
+<a name="l00358"></a>00358                                 }                       
+<a name="l00359"></a>00359                                 
+<a name="l00360"></a>00360                                 
+<a name="l00361"></a>00361                         <span class="keywordflow">default</span>:                
+<a name="l00362"></a>00362                                 {
+<a name="l00363"></a>00363                                         <span class="keywordflow">break</span>;                                  
+<a name="l00364"></a>00364                                 }
+<a name="l00365"></a>00365                 }
+<a name="l00366"></a>00366 }
+<a name="l00367"></a>00367 
+<a name="l00368"></a>00368 
+<a name="l00369"></a>00369 
+<a name="l00370"></a>00370 
+<a name="l00371"></a>00371 
+</pre></div><hr size="1"><address style="text-align: right;"><small>Wygenerowano Wed Jan 2 10:33:28 2008 dla URZYDZENIE STERUJACE OGRZEWANIEM Z WYKORZYSTANIEM MIKROKONTROLERA AVR programem&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.4 </small></address>
+</body>
+</html>

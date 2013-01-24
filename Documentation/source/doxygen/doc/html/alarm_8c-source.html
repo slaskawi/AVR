@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>URZYDZENIE STERUJACE OGRZEWANIEM Z WYKORZYSTANIEM MIKROKONTROLERA AVR: Plik źródłowy D:/CPP_pjojects/AVR/src/alarm.c</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Wygenerowano przez Doxygen 1.5.4 -->
+<div class="tabs">
+  <ul>
+    <li><a href="index.html"><span>Strona&nbsp;główna</span></a></li>
+    <li><a href="classes.html"><span>Klasy</span></a></li>
+    <li class="current"><a href="files.html"><span>Pliki</span></a></li>
+  </ul>
+</div>
+<h1>D:/CPP_pjojects/AVR/src/alarm.c</h1><a href="alarm_8c.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#include &lt;avr/interrupt.h&gt;</span>
+<a name="l00002"></a>00002 <span class="preprocessor">#include &lt;avr/signal.h&gt;</span>        
+<a name="l00003"></a>00003 
+<a name="l00011"></a>00011 <a class="code" href="uart_8c.html#ad0b06468af935e89ae3f73ee25a2d94">SIGNAL</a> (SIG_INTERRUPT0) 
+<a name="l00012"></a>00012 {
+<a name="l00013"></a>00013         <span class="comment">//if ( bit_is_clear(PIND, 5) )</span>
+<a name="l00014"></a>00014         <span class="comment">//{</span>
+<a name="l00015"></a>00015                 <span class="keywordflow">do</span>
+<a name="l00016"></a>00016                 {
+<a name="l00017"></a>00017                         <a class="code" href="global_8h.html#270f379056af25a9d9a5f5af222ffc06">sbi</a>(PORTB, 0);
+<a name="l00018"></a>00018                         <a class="code" href="delay_8c.html#ee52b103a84d621862e484030b4202a1">waitms</a>(250);
+<a name="l00019"></a>00019                         <a class="code" href="global_8h.html#8f357ddca1501d1d895c91b0c84a9e22">cbi</a>(PORTB, 0);
+<a name="l00020"></a>00020                         <a class="code" href="delay_8c.html#ee52b103a84d621862e484030b4202a1">waitms</a>(250);
+<a name="l00021"></a>00021                 }
+<a name="l00022"></a>00022                 <span class="keywordflow">while</span> ( !(bit_is_clear(PINA, 7)) );
+<a name="l00023"></a>00023         <span class="comment">//}</span>
+<a name="l00024"></a>00024 }
+<a name="l00025"></a>00025 
+<a name="l00026"></a>00026 
+<a name="l00027"></a>00027 
+<a name="l00028"></a>00028 <span class="keywordtype">void</span> INT_init(<span class="keywordtype">void</span>)
+<a name="l00029"></a>00029 {
+<a name="l00030"></a>00030         <span class="comment">//interrupts on falling edge</span>
+<a name="l00031"></a>00031         MCUCR = _BV(ISC01)|_BV(ISC11);
+<a name="l00032"></a>00032         GICR = 0xC0;
+<a name="l00033"></a>00033         <span class="comment">//interrupts on</span>
+<a name="l00034"></a>00034         sei();
+<a name="l00035"></a>00035   
+<a name="l00036"></a>00036 }
+</pre></div><hr size="1"><address style="text-align: right;"><small>Wygenerowano Wed Jan 2 10:33:28 2008 dla URZYDZENIE STERUJACE OGRZEWANIEM Z WYKORZYSTANIEM MIKROKONTROLERA AVR programem&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.4 </small></address>
+</body>
+</html>

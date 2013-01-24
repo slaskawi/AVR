@@ -1,0 +1,1805 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>URZYDZENIE STERUJACE OGRZEWANIEM Z WYKORZYSTANIEM MIKROKONTROLERA AVR: Dokumentacja pliku D:/CPP_pjojects/AVR/src/global.h</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Wygenerowano przez Doxygen 1.5.4 -->
+<div class="tabs">
+  <ul>
+    <li><a href="index.html"><span>Strona&nbsp;główna</span></a></li>
+    <li><a href="classes.html"><span>Klasy</span></a></li>
+    <li class="current"><a href="files.html"><span>Pliki</span></a></li>
+  </ul>
+</div>
+<h1>Dokumentacja pliku D:/CPP_pjojects/AVR/src/global.h</h1>
+<p>
+<div class="dynheader">
+Ten wykres pokazuje, które pliki bezpośrednio lub pośrednio załączają ten plik:</div>
+<div class="dynsection">
+</div>
+
+<p>
+<a href="global_8h-source.html">Idź do kodu źródłowego tego pliku.</a><table border="0" cellpadding="0" cellspacing="0">
+<tr><td></td></tr>
+<tr><td colspan="2"><br><h2>Komponenty</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstruct__time.html">struct_time</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="structu16bytes.html">u16bytes</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">union &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="unionu16convert.html">u16convert</a></td></tr>
+
+<tr><td colspan="2"><br><h2>Definicje</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#d9ecf80e1eac083d16ec47f9d3aeb39f">I2C_PORT</a>&nbsp;&nbsp;&nbsp;PORTC</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#18aefd12ad84d4c33dc97923cb821e47">I2C_SDA</a>&nbsp;&nbsp;&nbsp;1</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#212ca328a6409c98f8c3dfbbe1ba561d">I2C_SCL</a>&nbsp;&nbsp;&nbsp;0</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#24e196f276722b2f88b381627cb53e1f">PCF8583_A0</a>&nbsp;&nbsp;&nbsp;1</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#43bafb28b29491ec7f871319b5a3b2f8">F_CPU</a>&nbsp;&nbsp;&nbsp;16000000</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#1fac9153314479ad0ad495d752f0224a">UART_BAUD</a>&nbsp;&nbsp;&nbsp;19200</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#a7de3624fe432eda6dc4567e65241c6b">UART_CONST</a>&nbsp;&nbsp;&nbsp;(F_CPU/(UART_BAUD*16L)-1)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#0d57378e32bf8278011460740bc29f7f">UART_BUFFER_SIZE</a>&nbsp;&nbsp;&nbsp;32</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#e60d2618ccaf9d2f627165e8508a9632">WDR</a>()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#d99fda6bb7696991797c925f968234b9">NOP</a>()&nbsp;&nbsp;&nbsp;__asm__ __volatile__ (&quot;nop&quot;)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#b81cff0e46e175a7687c24e2cd937a9b">CYCLES_PER_US</a>&nbsp;&nbsp;&nbsp;((F_CPU+500000)/1000000)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#dbba0f726fc66d7100916c683b7568ae">GCC_VERSION</a>&nbsp;&nbsp;&nbsp;(__GNUC__ * 1000 + __GNUC_MINOR__)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#8f357ddca1501d1d895c91b0c84a9e22">cbi</a>(PORT, BIT)&nbsp;&nbsp;&nbsp;(_SFR_BYTE(PORT) &amp;= ~_BV(BIT))</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#270f379056af25a9d9a5f5af222ffc06">sbi</a>(PORT, BIT)&nbsp;&nbsp;&nbsp;(_SFR_BYTE(PORT) |= _BV(BIT))</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#26038b6a0e0da848b9b5a044aebc9e94">tbi</a>(PORT, BIT)&nbsp;&nbsp;&nbsp;(_SFR_BYTE(PORT) ^= _BV(BIT))</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#cfb07c34db826dc1d8548780c0c26b24">inp</a>(PORT)&nbsp;&nbsp;&nbsp;_SFR_BYTE(PORT)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#55a0fdde841aff4fd4e06002754f1876">outp</a>(VAL, PORT)&nbsp;&nbsp;&nbsp;(_SFR_BYTE(PORT) = (VAL))</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#90e7ab40424c3e0277f08ae2a456fbb8">outw</a>(VAL, PORT)&nbsp;&nbsp;&nbsp;(_SFR_WORD(PORT) = (VAL))</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#eab3ef4e919dc16c27b1a4fd14bfa028">BV</a>&nbsp;&nbsp;&nbsp;_BV</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#a3962772661ce1dfb6f286c42d6f7ffd">PRG_RDB</a>&nbsp;&nbsp;&nbsp;pgm_read_byte</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#40d2117eb6625e443b9dee4ca113a97f">eeprom_rb</a>&nbsp;&nbsp;&nbsp;eeprom_read_byte</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#6ca82673b18a6ec65b460f7d8219195e">eeprom_wb</a>&nbsp;&nbsp;&nbsp;eeprom_write_byte</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#cbe348573e1b5adccdc7bcf157dc6425">DDR</a>(<a class="el" href="ds18b20_8c.html#152131b9eabde25d6e03a1485362ff6f">x</a>)&nbsp;&nbsp;&nbsp;(_SFR_IO8(_SFR_IO_ADDR(<a class="el" href="ds18b20_8c.html#152131b9eabde25d6e03a1485362ff6f">x</a>)-1))</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#d7581da21e9fd6fd6f6920dd68d1c782">PIN</a>(<a class="el" href="ds18b20_8c.html#152131b9eabde25d6e03a1485362ff6f">x</a>)&nbsp;&nbsp;&nbsp;(_SFR_IO8(_SFR_IO_ADDR(<a class="el" href="ds18b20_8c.html#152131b9eabde25d6e03a1485362ff6f">x</a>)-2))</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#3f5ebf97c07a164113b82053ed2b5ebe">EEPROM</a>&nbsp;&nbsp;&nbsp;__attribute__((section(&quot;.eeprom&quot;)))</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#aa69a61a213d400e4e2044c80631d71d">ESTR</a>(s)&nbsp;&nbsp;&nbsp;({static char __c[] EEPROM = (s); __c;})</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#a8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>&nbsp;&nbsp;&nbsp;1</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#a93f0eb578d23995850d61f7d61c55c1">FALSE</a>&nbsp;&nbsp;&nbsp;0</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#c1c4669bb83df8f8617e6d20a62a6c09">KEY_POWER</a>&nbsp;&nbsp;&nbsp;16383</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#f4d1b8a2912354646c74cf36c69f8223">KEY_LEFT</a>&nbsp;&nbsp;&nbsp;16367</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#004194639b9ad76cea01d9e93716d4d6">KEY_RIGHT</a>&nbsp;&nbsp;&nbsp;16351</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#baee5edb96e542206ae6c8102ac228af">KEY_ENTER</a>&nbsp;&nbsp;&nbsp;16183</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#59aacfdd03dee071217bd596cce241c8">KEY_RESET</a>&nbsp;&nbsp;&nbsp;16373</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#7d55ecb49176103d99402b58b6a0392b">KEY_TEMPERATURE</a>&nbsp;&nbsp;&nbsp;16173</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#a0083d8381a219afff6c5b192ba6d1a6">KEY_TIMER</a>&nbsp;&nbsp;&nbsp;16333</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#4be8dfe64c5ebebff363664fafef3eed">KEY_OPTIONS</a>&nbsp;&nbsp;&nbsp;16205</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#5a7fd35018971faa28dacd3e33a8f737">KEY_1</a>&nbsp;&nbsp;&nbsp;16223</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#3a146cb397d373be978dfa9fd1dc9b3a">KEY_2</a>&nbsp;&nbsp;&nbsp;16287</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#701a135e841c3cfb69d9c5bb1444e198">KEY_3</a>&nbsp;&nbsp;&nbsp;16159</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#219891753a1b6ccd51c8ae763905dbf9">KEY_4</a>&nbsp;&nbsp;&nbsp;16239</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#8520da12c76efb8ca95ca2068d1ca35c">KEY_5</a>&nbsp;&nbsp;&nbsp;16303</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#4ab32ce5ef6b5d115253d2a712f2e19b">KEY_6</a>&nbsp;&nbsp;&nbsp;16175</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#5895875bee3ae13b13cdb5e85b45161b">KEY_7</a>&nbsp;&nbsp;&nbsp;16207</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#d2888e35bf1cbd0b25c3e82bc360c647">KEY_8</a>&nbsp;&nbsp;&nbsp;16271</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#e6838379f118dfbfc78d82fcd8886a41">KEY_9</a>&nbsp;&nbsp;&nbsp;16143</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#51ca76d1508339b071a974798b90474b">KEY_0</a>&nbsp;&nbsp;&nbsp;16311</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#52f78a3e4bca2f039b68d6469294cdbc">PC_CONNECT</a>&nbsp;&nbsp;&nbsp;1</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#561f25718f0ec8a9e9407ffacf0d5e68">PC_DISCONNECT</a>&nbsp;&nbsp;&nbsp;2</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#e929b33b552586b0bd45c60ce48c5c9b">PC_POWER</a>&nbsp;&nbsp;&nbsp;3</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#b78121a30314faa7b015c3e15a4132f8">PC_TIMER</a>&nbsp;&nbsp;&nbsp;4</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#496a0c2f48be352a47c1429ede4992d3">PC_DATE</a>&nbsp;&nbsp;&nbsp;5</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#bbc5f7023e039c3fcab7a0fc86802ccd">PC_TEMPERATURE</a>&nbsp;&nbsp;&nbsp;6</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#9e4819ecca4f1b7cf74b2a2dc5dc6b7c">PC_UART</a>&nbsp;&nbsp;&nbsp;7</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#f8ace353ddd69be81ed154ee631b5ae1">PC_EXIT</a>&nbsp;&nbsp;&nbsp;8</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#1c3f2561653c656561b227cb77e168f1">PC_TIME_SET</a>&nbsp;&nbsp;&nbsp;9</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#bdf05a9666fdd45efcc93ca0fea358fd">PC_DATE_SET</a>&nbsp;&nbsp;&nbsp;10</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#9700a24d33540a5ba83ddd2f20e8fe78">PC_ALARM_ON</a>&nbsp;&nbsp;&nbsp;11</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#7f9223be692f8399f6566a91745a3265">PC_ALARM_OFF</a>&nbsp;&nbsp;&nbsp;12</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#ffed371a34ddeb04043d32082d15f774">PC_ALARM_SET</a>&nbsp;&nbsp;&nbsp;13</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#9ee54e97e52d58808499a1bde1216698">PC_CONSOLE</a>&nbsp;&nbsp;&nbsp;14</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#53cfcf99c67c4a212d21b1f68f1880a6">PC_DATE_TIME</a>&nbsp;&nbsp;&nbsp;15</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#37ec6175704c33de8e52c49a7bfe998a">PC_SETTINGS</a>&nbsp;&nbsp;&nbsp;16</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#d12524c5bf22c6f6efcc7cc5f7c6abc3">PC_TEMP_SET_UP</a>&nbsp;&nbsp;&nbsp;17</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#0bc329ef67f05816714d4e28ab25b867">PC_TEMP_TIME_SET_UP</a>&nbsp;&nbsp;&nbsp;18</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#e1867acc7937c5823f9e9cb198ab0e59">PC_WORK_ON</a>&nbsp;&nbsp;&nbsp;19</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#a844d992de4fe64e6ea65757024117b7">PC_WORK_OFF</a>&nbsp;&nbsp;&nbsp;20</td></tr>
+
+<tr><td colspan="2"><br><h2>Definicje typów</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">typedef unsigned char&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">typedef char&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#85d781fea5e4df1843c1c10b00e0d388">s08</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">typedef unsigned short&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#9e6c91d77e24643b888dbd1a1a590054">u16</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">typedef short&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#2e9bf6983da73775aa86158c825bf777">s16</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">typedef unsigned long&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#2caf5cd7bcdbe1eefa727f44ffb10bac">u32</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">typedef long&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#584ab8b1fe53a7874ffa10b1f0c54ef4">s32</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">typedef unsigned long long&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#d758b7a5c3f18ed79d2fcd23d9f16357">u64</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">typedef long long&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#93680f46d09022794e3923824923b42b">s64</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">typedef unsigned char&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#4f4bb67531a9bf6f0b9c6ad76aeba587">UCHAR</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">typedef unsigned short&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#197942eefa7db30960ae396d68339b97">WORD</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">typedef unsigned long&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">typedef char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#1e75412f1c8ea429b8ad5120601a3705">LPCTSTR</a></td></tr>
+
+<tr><td colspan="2"><br><h2>Zmienne</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#3e645f4dc974db62cfd8b8be88d199ae">m_nightHour</a> = 0</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#78ab78e62e6a971950f2b89cc216d857">m_nightLast</a> = 0</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#6a4240e5f794fb776a59105323a7445e">m_dayTemp</a> = 0</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#eacdc3c8f4b1744bfadfc824d1540e8e">m_nightTemp</a> = 0</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#5208b9130be6938313166c5efd14b69f">m_offsetTemp</a> = 0</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#5bd37bd643c9890f2e534726291c21e0">m_requiresSettings</a> = 0</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#6c7090a53715f021d8b70a1539843c4f">SETTING_TEMP</a> = 1</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#9ec1d040799cd4f61f2ca8fdceb919d5">SETTING_TIME</a> = 2</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#3eecaf6516297aa2fb86e22f196bbaf4">SETTING_DATE</a> = 4</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#f1b90965e27ca63a959bd1e8ecd4baeb">SETTING_ALL</a> = 7</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="global_8h.html#09fc204512cd0cbed8f0011006cb69c9">m_work</a> = 0</td></tr>
+
+</table>
+<hr><h2>Dokumentacja definicji</h2>
+<a class="anchor" name="eab3ef4e919dc16c27b1a4fd14bfa028"></a><!-- doxytag: member="global.h::BV" ref="eab3ef4e919dc16c27b1a4fd14bfa028" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BV&nbsp;&nbsp;&nbsp;_BV          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00118">118</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="8f357ddca1501d1d895c91b0c84a9e22"></a><!-- doxytag: member="global.h::cbi" ref="8f357ddca1501d1d895c91b0c84a9e22" args="(PORT, BIT)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define cbi          </td>
+          <td>(</td>
+          <td class="paramtype">PORT,         <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">BIT&nbsp;</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%">&nbsp;&nbsp;&nbsp;(_SFR_BYTE(PORT) &amp;= ~_BV(BIT))</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Deprecated sbi, cbi settings 
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00088">88</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="b81cff0e46e175a7687c24e2cd937a9b"></a><!-- doxytag: member="global.h::CYCLES_PER_US" ref="b81cff0e46e175a7687c24e2cd937a9b" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CYCLES_PER_US&nbsp;&nbsp;&nbsp;((F_CPU+500000)/1000000)          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Number of cycles per sec 
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00073">73</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="cbe348573e1b5adccdc7bcf157dc6425"></a><!-- doxytag: member="global.h::DDR" ref="cbe348573e1b5adccdc7bcf157dc6425" args="(x)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DDR          </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ds18b20_8c.html#152131b9eabde25d6e03a1485362ff6f">x</a>&nbsp;</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%">&nbsp;&nbsp;&nbsp;(_SFR_IO8(_SFR_IO_ADDR(<a class="el" href="ds18b20_8c.html#152131b9eabde25d6e03a1485362ff6f">x</a>)-1))</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Address direction register (input) 
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00137">137</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="3f5ebf97c07a164113b82053ed2b5ebe"></a><!-- doxytag: member="global.h::EEPROM" ref="3f5ebf97c07a164113b82053ed2b5ebe" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EEPROM&nbsp;&nbsp;&nbsp;__attribute__((section(&quot;.eeprom&quot;)))          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+EEPROM defines 
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00148">148</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="40d2117eb6625e443b9dee4ca113a97f"></a><!-- doxytag: member="global.h::eeprom_rb" ref="40d2117eb6625e443b9dee4ca113a97f" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define eeprom_rb&nbsp;&nbsp;&nbsp;eeprom_read_byte          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00126">126</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="6ca82673b18a6ec65b460f7d8219195e"></a><!-- doxytag: member="global.h::eeprom_wb" ref="6ca82673b18a6ec65b460f7d8219195e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define eeprom_wb&nbsp;&nbsp;&nbsp;eeprom_write_byte          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00130">130</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="aa69a61a213d400e4e2044c80631d71d"></a><!-- doxytag: member="global.h::ESTR" ref="aa69a61a213d400e4e2044c80631d71d" args="(s)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ESTR          </td>
+          <td>(</td>
+          <td class="paramtype">s&nbsp;</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%">&nbsp;&nbsp;&nbsp;({static char __c[] EEPROM = (s); __c;})</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00150">150</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="43bafb28b29491ec7f871319b5a3b2f8"></a><!-- doxytag: member="global.h::F_CPU" ref="43bafb28b29491ec7f871319b5a3b2f8" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define F_CPU&nbsp;&nbsp;&nbsp;16000000          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Clock speed 
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00028">28</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="a93f0eb578d23995850d61f7d61c55c1"></a><!-- doxytag: member="global.h::FALSE" ref="a93f0eb578d23995850d61f7d61c55c1" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FALSE&nbsp;&nbsp;&nbsp;0          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00160">160</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="dbba0f726fc66d7100916c683b7568ae"></a><!-- doxytag: member="global.h::GCC_VERSION" ref="dbba0f726fc66d7100916c683b7568ae" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define GCC_VERSION&nbsp;&nbsp;&nbsp;(__GNUC__ * 1000 + __GNUC_MINOR__)          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+GCC version 
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00080">80</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="d9ecf80e1eac083d16ec47f9d3aeb39f"></a><!-- doxytag: member="global.h::I2C_PORT" ref="d9ecf80e1eac083d16ec47f9d3aeb39f" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define I2C_PORT&nbsp;&nbsp;&nbsp;PORTC          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Global config file. Defines ports, speeds etc. <dl class="author" compact><dt><b>Autor:</b></dt><dd>Sebastian Laskawiec and Michal Wachowicz </dd></dl>
+
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00009">9</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="212ca328a6409c98f8c3dfbbe1ba561d"></a><!-- doxytag: member="global.h::I2C_SCL" ref="212ca328a6409c98f8c3dfbbe1ba561d" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define I2C_SCL&nbsp;&nbsp;&nbsp;0          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00011">11</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="18aefd12ad84d4c33dc97923cb821e47"></a><!-- doxytag: member="global.h::I2C_SDA" ref="18aefd12ad84d4c33dc97923cb821e47" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define I2C_SDA&nbsp;&nbsp;&nbsp;1          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00010">10</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="cfb07c34db826dc1d8548780c0c26b24"></a><!-- doxytag: member="global.h::inp" ref="cfb07c34db826dc1d8548780c0c26b24" args="(PORT)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define inp          </td>
+          <td>(</td>
+          <td class="paramtype">PORT&nbsp;</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%">&nbsp;&nbsp;&nbsp;_SFR_BYTE(PORT)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Compatibile properties 
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00106">106</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="51ca76d1508339b071a974798b90474b"></a><!-- doxytag: member="global.h::KEY_0" ref="51ca76d1508339b071a974798b90474b" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define KEY_0&nbsp;&nbsp;&nbsp;16311          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00339">339</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="5a7fd35018971faa28dacd3e33a8f737"></a><!-- doxytag: member="global.h::KEY_1" ref="5a7fd35018971faa28dacd3e33a8f737" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define KEY_1&nbsp;&nbsp;&nbsp;16223          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00330">330</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="3a146cb397d373be978dfa9fd1dc9b3a"></a><!-- doxytag: member="global.h::KEY_2" ref="3a146cb397d373be978dfa9fd1dc9b3a" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define KEY_2&nbsp;&nbsp;&nbsp;16287          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00331">331</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="701a135e841c3cfb69d9c5bb1444e198"></a><!-- doxytag: member="global.h::KEY_3" ref="701a135e841c3cfb69d9c5bb1444e198" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define KEY_3&nbsp;&nbsp;&nbsp;16159          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00332">332</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="219891753a1b6ccd51c8ae763905dbf9"></a><!-- doxytag: member="global.h::KEY_4" ref="219891753a1b6ccd51c8ae763905dbf9" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define KEY_4&nbsp;&nbsp;&nbsp;16239          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00333">333</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="8520da12c76efb8ca95ca2068d1ca35c"></a><!-- doxytag: member="global.h::KEY_5" ref="8520da12c76efb8ca95ca2068d1ca35c" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define KEY_5&nbsp;&nbsp;&nbsp;16303          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00334">334</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="4ab32ce5ef6b5d115253d2a712f2e19b"></a><!-- doxytag: member="global.h::KEY_6" ref="4ab32ce5ef6b5d115253d2a712f2e19b" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define KEY_6&nbsp;&nbsp;&nbsp;16175          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00335">335</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="5895875bee3ae13b13cdb5e85b45161b"></a><!-- doxytag: member="global.h::KEY_7" ref="5895875bee3ae13b13cdb5e85b45161b" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define KEY_7&nbsp;&nbsp;&nbsp;16207          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00336">336</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="d2888e35bf1cbd0b25c3e82bc360c647"></a><!-- doxytag: member="global.h::KEY_8" ref="d2888e35bf1cbd0b25c3e82bc360c647" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define KEY_8&nbsp;&nbsp;&nbsp;16271          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00337">337</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="e6838379f118dfbfc78d82fcd8886a41"></a><!-- doxytag: member="global.h::KEY_9" ref="e6838379f118dfbfc78d82fcd8886a41" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define KEY_9&nbsp;&nbsp;&nbsp;16143          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00338">338</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="baee5edb96e542206ae6c8102ac228af"></a><!-- doxytag: member="global.h::KEY_ENTER" ref="baee5edb96e542206ae6c8102ac228af" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define KEY_ENTER&nbsp;&nbsp;&nbsp;16183          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00325">325</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="f4d1b8a2912354646c74cf36c69f8223"></a><!-- doxytag: member="global.h::KEY_LEFT" ref="f4d1b8a2912354646c74cf36c69f8223" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define KEY_LEFT&nbsp;&nbsp;&nbsp;16367          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00323">323</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="4be8dfe64c5ebebff363664fafef3eed"></a><!-- doxytag: member="global.h::KEY_OPTIONS" ref="4be8dfe64c5ebebff363664fafef3eed" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define KEY_OPTIONS&nbsp;&nbsp;&nbsp;16205          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00329">329</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="c1c4669bb83df8f8617e6d20a62a6c09"></a><!-- doxytag: member="global.h::KEY_POWER" ref="c1c4669bb83df8f8617e6d20a62a6c09" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define KEY_POWER&nbsp;&nbsp;&nbsp;16383          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Remote controller key defines 
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00322">322</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="59aacfdd03dee071217bd596cce241c8"></a><!-- doxytag: member="global.h::KEY_RESET" ref="59aacfdd03dee071217bd596cce241c8" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define KEY_RESET&nbsp;&nbsp;&nbsp;16373          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00326">326</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="004194639b9ad76cea01d9e93716d4d6"></a><!-- doxytag: member="global.h::KEY_RIGHT" ref="004194639b9ad76cea01d9e93716d4d6" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define KEY_RIGHT&nbsp;&nbsp;&nbsp;16351          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00324">324</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="7d55ecb49176103d99402b58b6a0392b"></a><!-- doxytag: member="global.h::KEY_TEMPERATURE" ref="7d55ecb49176103d99402b58b6a0392b" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define KEY_TEMPERATURE&nbsp;&nbsp;&nbsp;16173          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00327">327</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="a0083d8381a219afff6c5b192ba6d1a6"></a><!-- doxytag: member="global.h::KEY_TIMER" ref="a0083d8381a219afff6c5b192ba6d1a6" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define KEY_TIMER&nbsp;&nbsp;&nbsp;16333          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00328">328</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="d99fda6bb7696991797c925f968234b9"></a><!-- doxytag: member="global.h::NOP" ref="d99fda6bb7696991797c925f968234b9" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NOP          </td>
+          <td>(</td>
+&nbsp;</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%">&nbsp;&nbsp;&nbsp;__asm__ __volatile__ (&quot;nop&quot;)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Assembler nop definition. 
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00066">66</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="55a0fdde841aff4fd4e06002754f1876"></a><!-- doxytag: member="global.h::outp" ref="55a0fdde841aff4fd4e06002754f1876" args="(VAL, PORT)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define outp          </td>
+          <td>(</td>
+          <td class="paramtype">VAL,         <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PORT&nbsp;</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%">&nbsp;&nbsp;&nbsp;(_SFR_BYTE(PORT) = (VAL))</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00110">110</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="90e7ab40424c3e0277f08ae2a456fbb8"></a><!-- doxytag: member="global.h::outw" ref="90e7ab40424c3e0277f08ae2a456fbb8" args="(VAL, PORT)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define outw          </td>
+          <td>(</td>
+          <td class="paramtype">VAL,         <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PORT&nbsp;</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%">&nbsp;&nbsp;&nbsp;(_SFR_WORD(PORT) = (VAL))</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00114">114</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="7f9223be692f8399f6566a91745a3265"></a><!-- doxytag: member="global.h::PC_ALARM_OFF" ref="7f9223be692f8399f6566a91745a3265" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PC_ALARM_OFF&nbsp;&nbsp;&nbsp;12          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00355">355</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="9700a24d33540a5ba83ddd2f20e8fe78"></a><!-- doxytag: member="global.h::PC_ALARM_ON" ref="9700a24d33540a5ba83ddd2f20e8fe78" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PC_ALARM_ON&nbsp;&nbsp;&nbsp;11          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00354">354</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="ffed371a34ddeb04043d32082d15f774"></a><!-- doxytag: member="global.h::PC_ALARM_SET" ref="ffed371a34ddeb04043d32082d15f774" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PC_ALARM_SET&nbsp;&nbsp;&nbsp;13          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00356">356</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="52f78a3e4bca2f039b68d6469294cdbc"></a><!-- doxytag: member="global.h::PC_CONNECT" ref="52f78a3e4bca2f039b68d6469294cdbc" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PC_CONNECT&nbsp;&nbsp;&nbsp;1          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+PC Commander indexes 
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00344">344</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="9ee54e97e52d58808499a1bde1216698"></a><!-- doxytag: member="global.h::PC_CONSOLE" ref="9ee54e97e52d58808499a1bde1216698" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PC_CONSOLE&nbsp;&nbsp;&nbsp;14          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00357">357</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="496a0c2f48be352a47c1429ede4992d3"></a><!-- doxytag: member="global.h::PC_DATE" ref="496a0c2f48be352a47c1429ede4992d3" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PC_DATE&nbsp;&nbsp;&nbsp;5          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00348">348</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="bdf05a9666fdd45efcc93ca0fea358fd"></a><!-- doxytag: member="global.h::PC_DATE_SET" ref="bdf05a9666fdd45efcc93ca0fea358fd" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PC_DATE_SET&nbsp;&nbsp;&nbsp;10          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00353">353</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="53cfcf99c67c4a212d21b1f68f1880a6"></a><!-- doxytag: member="global.h::PC_DATE_TIME" ref="53cfcf99c67c4a212d21b1f68f1880a6" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PC_DATE_TIME&nbsp;&nbsp;&nbsp;15          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00358">358</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="561f25718f0ec8a9e9407ffacf0d5e68"></a><!-- doxytag: member="global.h::PC_DISCONNECT" ref="561f25718f0ec8a9e9407ffacf0d5e68" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PC_DISCONNECT&nbsp;&nbsp;&nbsp;2          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00345">345</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="f8ace353ddd69be81ed154ee631b5ae1"></a><!-- doxytag: member="global.h::PC_EXIT" ref="f8ace353ddd69be81ed154ee631b5ae1" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PC_EXIT&nbsp;&nbsp;&nbsp;8          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00351">351</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="e929b33b552586b0bd45c60ce48c5c9b"></a><!-- doxytag: member="global.h::PC_POWER" ref="e929b33b552586b0bd45c60ce48c5c9b" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PC_POWER&nbsp;&nbsp;&nbsp;3          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00346">346</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="37ec6175704c33de8e52c49a7bfe998a"></a><!-- doxytag: member="global.h::PC_SETTINGS" ref="37ec6175704c33de8e52c49a7bfe998a" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PC_SETTINGS&nbsp;&nbsp;&nbsp;16          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00359">359</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="d12524c5bf22c6f6efcc7cc5f7c6abc3"></a><!-- doxytag: member="global.h::PC_TEMP_SET_UP" ref="d12524c5bf22c6f6efcc7cc5f7c6abc3" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PC_TEMP_SET_UP&nbsp;&nbsp;&nbsp;17          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00360">360</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="0bc329ef67f05816714d4e28ab25b867"></a><!-- doxytag: member="global.h::PC_TEMP_TIME_SET_UP" ref="0bc329ef67f05816714d4e28ab25b867" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PC_TEMP_TIME_SET_UP&nbsp;&nbsp;&nbsp;18          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00361">361</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="bbc5f7023e039c3fcab7a0fc86802ccd"></a><!-- doxytag: member="global.h::PC_TEMPERATURE" ref="bbc5f7023e039c3fcab7a0fc86802ccd" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PC_TEMPERATURE&nbsp;&nbsp;&nbsp;6          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00349">349</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="1c3f2561653c656561b227cb77e168f1"></a><!-- doxytag: member="global.h::PC_TIME_SET" ref="1c3f2561653c656561b227cb77e168f1" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PC_TIME_SET&nbsp;&nbsp;&nbsp;9          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00352">352</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="b78121a30314faa7b015c3e15a4132f8"></a><!-- doxytag: member="global.h::PC_TIMER" ref="b78121a30314faa7b015c3e15a4132f8" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PC_TIMER&nbsp;&nbsp;&nbsp;4          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00347">347</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="9e4819ecca4f1b7cf74b2a2dc5dc6b7c"></a><!-- doxytag: member="global.h::PC_UART" ref="9e4819ecca4f1b7cf74b2a2dc5dc6b7c" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PC_UART&nbsp;&nbsp;&nbsp;7          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00350">350</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="a844d992de4fe64e6ea65757024117b7"></a><!-- doxytag: member="global.h::PC_WORK_OFF" ref="a844d992de4fe64e6ea65757024117b7" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PC_WORK_OFF&nbsp;&nbsp;&nbsp;20          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00363">363</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="e1867acc7937c5823f9e9cb198ab0e59"></a><!-- doxytag: member="global.h::PC_WORK_ON" ref="e1867acc7937c5823f9e9cb198ab0e59" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PC_WORK_ON&nbsp;&nbsp;&nbsp;19          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00362">362</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="24e196f276722b2f88b381627cb53e1f"></a><!-- doxytag: member="global.h::PCF8583_A0" ref="24e196f276722b2f88b381627cb53e1f" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PCF8583_A0&nbsp;&nbsp;&nbsp;1          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+A0 address for PCF 
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00017">17</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="d7581da21e9fd6fd6f6920dd68d1c782"></a><!-- doxytag: member="global.h::PIN" ref="d7581da21e9fd6fd6f6920dd68d1c782" args="(x)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PIN          </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="ds18b20_8c.html#152131b9eabde25d6e03a1485362ff6f">x</a>&nbsp;</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%">&nbsp;&nbsp;&nbsp;(_SFR_IO8(_SFR_IO_ADDR(<a class="el" href="ds18b20_8c.html#152131b9eabde25d6e03a1485362ff6f">x</a>)-2))</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Address direction register (output) 
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00142">142</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="a3962772661ce1dfb6f286c42d6f7ffd"></a><!-- doxytag: member="global.h::PRG_RDB" ref="a3962772661ce1dfb6f286c42d6f7ffd" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PRG_RDB&nbsp;&nbsp;&nbsp;pgm_read_byte          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00122">122</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="270f379056af25a9d9a5f5af222ffc06"></a><!-- doxytag: member="global.h::sbi" ref="270f379056af25a9d9a5f5af222ffc06" args="(PORT, BIT)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define sbi          </td>
+          <td>(</td>
+          <td class="paramtype">PORT,         <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">BIT&nbsp;</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%">&nbsp;&nbsp;&nbsp;(_SFR_BYTE(PORT) |= _BV(BIT))</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00092">92</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="26038b6a0e0da848b9b5a044aebc9e94"></a><!-- doxytag: member="global.h::tbi" ref="26038b6a0e0da848b9b5a044aebc9e94" args="(PORT, BIT)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define tbi          </td>
+          <td>(</td>
+          <td class="paramtype">PORT,         <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">BIT&nbsp;</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%">&nbsp;&nbsp;&nbsp;(_SFR_BYTE(PORT) ^= _BV(BIT))</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Toggle bit 
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00099">99</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="a8cecfc5c5c054d2875c03e77b7be15d"></a><!-- doxytag: member="global.h::TRUE" ref="a8cecfc5c5c054d2875c03e77b7be15d" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TRUE&nbsp;&nbsp;&nbsp;1          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Logical true, false 
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00156">156</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="1fac9153314479ad0ad495d752f0224a"></a><!-- doxytag: member="global.h::UART_BAUD" ref="1fac9153314479ad0ad495d752f0224a" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define UART_BAUD&nbsp;&nbsp;&nbsp;19200          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+UART speed 
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00036">36</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="0d57378e32bf8278011460740bc29f7f"></a><!-- doxytag: member="global.h::UART_BUFFER_SIZE" ref="0d57378e32bf8278011460740bc29f7f" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define UART_BUFFER_SIZE&nbsp;&nbsp;&nbsp;32          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+UART buffer size 
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00051">51</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="a7de3624fe432eda6dc4567e65241c6b"></a><!-- doxytag: member="global.h::UART_CONST" ref="a7de3624fe432eda6dc4567e65241c6b" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define UART_CONST&nbsp;&nbsp;&nbsp;(F_CPU/(UART_BAUD*16L)-1)          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+UART boudrate calculations 
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00044">44</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="e60d2618ccaf9d2f627165e8508a9632"></a><!-- doxytag: member="global.h::WDR" ref="e60d2618ccaf9d2f627165e8508a9632" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define WDR          </td>
+          <td>(</td>
+&nbsp;</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Watchdog settings 
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00060">60</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<hr><h2>Dokumentacja definicji typów</h2>
+<a class="anchor" name="d342ac907eb044443153a22f964bf0af"></a><!-- doxytag: member="global.h::DWORD" ref="d342ac907eb044443153a22f964bf0af" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef unsigned long <a class="el" href="global_8h.html#d342ac907eb044443153a22f964bf0af">DWORD</a>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00283">283</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="1e75412f1c8ea429b8ad5120601a3705"></a><!-- doxytag: member="global.h::LPCTSTR" ref="1e75412f1c8ea429b8ad5120601a3705" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef char* <a class="el" href="global_8h.html#1e75412f1c8ea429b8ad5120601a3705">LPCTSTR</a>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00284">284</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="85d781fea5e4df1843c1c10b00e0d388"></a><!-- doxytag: member="global.h::s08" ref="85d781fea5e4df1843c1c10b00e0d388" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef char <a class="el" href="global_8h.html#85d781fea5e4df1843c1c10b00e0d388">s08</a>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00266">266</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="2e9bf6983da73775aa86158c825bf777"></a><!-- doxytag: member="global.h::s16" ref="2e9bf6983da73775aa86158c825bf777" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef short <a class="el" href="global_8h.html#2e9bf6983da73775aa86158c825bf777">s16</a>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00268">268</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="584ab8b1fe53a7874ffa10b1f0c54ef4"></a><!-- doxytag: member="global.h::s32" ref="584ab8b1fe53a7874ffa10b1f0c54ef4" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef long <a class="el" href="global_8h.html#584ab8b1fe53a7874ffa10b1f0c54ef4">s32</a>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00270">270</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="93680f46d09022794e3923824923b42b"></a><!-- doxytag: member="global.h::s64" ref="93680f46d09022794e3923824923b42b" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef long long <a class="el" href="global_8h.html#93680f46d09022794e3923824923b42b">s64</a>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00272">272</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="4a020a9446b094e07e53376ac939a64d"></a><!-- doxytag: member="global.h::u08" ref="4a020a9446b094e07e53376ac939a64d" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef unsigned char <a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Register names changes UART settings Definition of different types u08 - unsigned 8 bits s08 - signed 8 bits ... 
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00265">265</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="9e6c91d77e24643b888dbd1a1a590054"></a><!-- doxytag: member="global.h::u16" ref="9e6c91d77e24643b888dbd1a1a590054" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef unsigned short <a class="el" href="global_8h.html#9e6c91d77e24643b888dbd1a1a590054">u16</a>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00267">267</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="2caf5cd7bcdbe1eefa727f44ffb10bac"></a><!-- doxytag: member="global.h::u32" ref="2caf5cd7bcdbe1eefa727f44ffb10bac" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef unsigned long <a class="el" href="global_8h.html#2caf5cd7bcdbe1eefa727f44ffb10bac">u32</a>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00269">269</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="d758b7a5c3f18ed79d2fcd23d9f16357"></a><!-- doxytag: member="global.h::u64" ref="d758b7a5c3f18ed79d2fcd23d9f16357" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef unsigned long long <a class="el" href="global_8h.html#d758b7a5c3f18ed79d2fcd23d9f16357">u64</a>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00271">271</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="4f4bb67531a9bf6f0b9c6ad76aeba587"></a><!-- doxytag: member="global.h::UCHAR" ref="4f4bb67531a9bf6f0b9c6ad76aeba587" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef unsigned char <a class="el" href="global_8h.html#4f4bb67531a9bf6f0b9c6ad76aeba587">UCHAR</a>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Definition of types UCHAR - unsigned 8 bits WORD - unsigned 16 bits DWORD - unsigned 32 bits LPCTSTR - String pointer 
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00281">281</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="197942eefa7db30960ae396d68339b97"></a><!-- doxytag: member="global.h::WORD" ref="197942eefa7db30960ae396d68339b97" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef unsigned short <a class="el" href="global_8h.html#197942eefa7db30960ae396d68339b97">WORD</a>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00282">282</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<hr><h2>Dokumentacja zmiennych</h2>
+<a class="anchor" name="6a4240e5f794fb776a59105323a7445e"></a><!-- doxytag: member="global.h::m_dayTemp" ref="6a4240e5f794fb776a59105323a7445e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a> <a class="el" href="global_8h.html#6a4240e5f794fb776a59105323a7445e">m_dayTemp</a> = 0          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00370">370</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="3e645f4dc974db62cfd8b8be88d199ae"></a><!-- doxytag: member="global.h::m_nightHour" ref="3e645f4dc974db62cfd8b8be88d199ae" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a> <a class="el" href="global_8h.html#3e645f4dc974db62cfd8b8be88d199ae">m_nightHour</a> = 0          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Global variables used in program 
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00368">368</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="78ab78e62e6a971950f2b89cc216d857"></a><!-- doxytag: member="global.h::m_nightLast" ref="78ab78e62e6a971950f2b89cc216d857" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a> <a class="el" href="global_8h.html#78ab78e62e6a971950f2b89cc216d857">m_nightLast</a> = 0          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00369">369</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="eacdc3c8f4b1744bfadfc824d1540e8e"></a><!-- doxytag: member="global.h::m_nightTemp" ref="eacdc3c8f4b1744bfadfc824d1540e8e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a> <a class="el" href="global_8h.html#eacdc3c8f4b1744bfadfc824d1540e8e">m_nightTemp</a> = 0          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00371">371</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="5208b9130be6938313166c5efd14b69f"></a><!-- doxytag: member="global.h::m_offsetTemp" ref="5208b9130be6938313166c5efd14b69f" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a> <a class="el" href="global_8h.html#5208b9130be6938313166c5efd14b69f">m_offsetTemp</a> = 0          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00372">372</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="5bd37bd643c9890f2e534726291c21e0"></a><!-- doxytag: member="global.h::m_requiresSettings" ref="5bd37bd643c9890f2e534726291c21e0" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a> <a class="el" href="global_8h.html#5bd37bd643c9890f2e534726291c21e0">m_requiresSettings</a> = 0          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Settings 
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00377">377</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="09fc204512cd0cbed8f0011006cb69c9"></a><!-- doxytag: member="global.h::m_work" ref="09fc204512cd0cbed8f0011006cb69c9" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a> <a class="el" href="global_8h.html#09fc204512cd0cbed8f0011006cb69c9">m_work</a> = 0          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00383">383</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="f1b90965e27ca63a959bd1e8ecd4baeb"></a><!-- doxytag: member="global.h::SETTING_ALL" ref="f1b90965e27ca63a959bd1e8ecd4baeb" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a> <a class="el" href="global_8h.html#f1b90965e27ca63a959bd1e8ecd4baeb">SETTING_ALL</a> = 7          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00381">381</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="3eecaf6516297aa2fb86e22f196bbaf4"></a><!-- doxytag: member="global.h::SETTING_DATE" ref="3eecaf6516297aa2fb86e22f196bbaf4" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a> <a class="el" href="global_8h.html#3eecaf6516297aa2fb86e22f196bbaf4">SETTING_DATE</a> = 4          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00380">380</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="6c7090a53715f021d8b70a1539843c4f"></a><!-- doxytag: member="global.h::SETTING_TEMP" ref="6c7090a53715f021d8b70a1539843c4f" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a> <a class="el" href="global_8h.html#6c7090a53715f021d8b70a1539843c4f">SETTING_TEMP</a> = 1          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00378">378</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="9ec1d040799cd4f61f2ca8fdceb919d5"></a><!-- doxytag: member="global.h::SETTING_TIME" ref="9ec1d040799cd4f61f2ca8fdceb919d5" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a> <a class="el" href="global_8h.html#9ec1d040799cd4f61f2ca8fdceb919d5">SETTING_TIME</a> = 2          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="global_8h-source.html#l00379">379</a> pliku <a class="el" href="global_8h-source.html">global.h</a>.</p>
+
+</div>
+</div><p>
+<hr size="1"><address style="text-align: right;"><small>Wygenerowano Wed Jan 2 10:33:28 2008 dla URZYDZENIE STERUJACE OGRZEWANIEM Z WYKORZYSTANIEM MIKROKONTROLERA AVR programem&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.4 </small></address>
+</body>
+</html>

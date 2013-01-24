@@ -1,0 +1,379 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>URZYDZENIE STERUJACE OGRZEWANIEM Z WYKORZYSTANIEM MIKROKONTROLERA AVR: Dokumentacja pliku D:/CPP_pjojects/AVR/src/remote_choice.c</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Wygenerowano przez Doxygen 1.5.4 -->
+<div class="tabs">
+  <ul>
+    <li><a href="index.html"><span>Strona&nbsp;główna</span></a></li>
+    <li><a href="classes.html"><span>Klasy</span></a></li>
+    <li class="current"><a href="files.html"><span>Pliki</span></a></li>
+  </ul>
+</div>
+<h1>Dokumentacja pliku D:/CPP_pjojects/AVR/src/remote_choice.c</h1>
+<p>
+<div class="dynheader">
+Ten wykres pokazuje, które pliki bezpośrednio lub pośrednio załączają ten plik:</div>
+<div class="dynsection">
+</div>
+
+<p>
+<a href="remote__choice_8c-source.html">Idź do kodu źródłowego tego pliku.</a><table border="0" cellpadding="0" cellspacing="0">
+<tr><td></td></tr>
+<tr><td colspan="2"><br><h2>Funkcje</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="remote__choice_8c.html#2b07fc4f4a062680410adefb08815d03">power_on</a> (void)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="remote__choice_8c.html#19562d96ecbcf8a223d3c38b39993fbf">updateTime</a> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="remote__choice_8c.html#ac4a0e0b4ad49cbbab8b2626204f9492">updateTemperature</a> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="remote__choice_8c.html#c631b0e717a0bc940119122b77aaaa2c">dayNightDecision</a> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="remote__choice_8c.html#dc309d405327b4e698ed1bb12d789d4b">remote_switch</a> (<a class="el" href="global_8h.html#9e6c91d77e24643b888dbd1a1a590054">u16</a> decode_value)</td></tr>
+
+<tr><td colspan="2"><br><h2>Zmienne</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="remote__choice_8c.html#274e6f04a50175c7fc3494aaa5850c1e">_msec</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="remote__choice_8c.html#97f7eefbf22cc5d55e882b3815c4f960">msec1</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="remote__choice_8c.html#829224e56bc86013e756a62dcfd42e7a">_sec</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="remote__choice_8c.html#052b4d847b2896a551443be39d1dc268">sec1</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="remote__choice_8c.html#9c31ef70c6b2462de2f0ab7e6df977b1">_min</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="remote__choice_8c.html#d59716252bf29c98b663100e23859f89">min1</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="remote__choice_8c.html#377255b34163fa46843fd625bd22e070">_hour</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="remote__choice_8c.html#a3adb7926cfcbc30ae1782f4dec5d639">hour1</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="remote__choice_8c.html#ddb79d7c8126cc39b3ae813081925480">_day</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="remote__choice_8c.html#ebf57b57af5afb0cab866eb1d88350b2">_month</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="global_8h.html#9e6c91d77e24643b888dbd1a1a590054">u16</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="remote__choice_8c.html#a9dd1b097f15329da17e6d8a5a9767c6">_year</a></td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="remote__choice_8c.html#48e0ff158c8a0f42291b824de5867a3c">indexTimer</a> = 0</td></tr>
+
+</table>
+<hr><h2>Dokumentacja funkcji</h2>
+<a class="anchor" name="c631b0e717a0bc940119122b77aaaa2c"></a><!-- doxytag: member="remote_choice.c::dayNightDecision" ref="c631b0e717a0bc940119122b77aaaa2c" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void dayNightDecision           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="remote__choice_8c-source.html#l00033">33</a> pliku <a class="el" href="remote__choice_8c-source.html">remote_choice.c</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="2b07fc4f4a062680410adefb08815d03"></a><!-- doxytag: member="remote_choice.c::power_on" ref="2b07fc4f4a062680410adefb08815d03" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void power_on           </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="remote__choice_8c-source.html#l00007">7</a> pliku <a class="el" href="remote__choice_8c-source.html">remote_choice.c</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="dc309d405327b4e698ed1bb12d789d4b"></a><!-- doxytag: member="remote_choice.c::remote_switch" ref="dc309d405327b4e698ed1bb12d789d4b" args="(u16 decode_value)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">remote_switch           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="global_8h.html#9e6c91d77e24643b888dbd1a1a590054">u16</a>&nbsp;</td>
+          <td class="paramname"> <em>decode_value</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="remote__choice_8c-source.html#l00126">126</a> pliku <a class="el" href="remote__choice_8c-source.html">remote_choice.c</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="ac4a0e0b4ad49cbbab8b2626204f9492"></a><!-- doxytag: member="remote_choice.c::updateTemperature" ref="ac4a0e0b4ad49cbbab8b2626204f9492" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void updateTemperature           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="remote__choice_8c-source.html#l00025">25</a> pliku <a class="el" href="remote__choice_8c-source.html">remote_choice.c</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="19562d96ecbcf8a223d3c38b39993fbf"></a><!-- doxytag: member="remote_choice.c::updateTime" ref="19562d96ecbcf8a223d3c38b39993fbf" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void updateTime           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="remote__choice_8c-source.html#l00020">20</a> pliku <a class="el" href="remote__choice_8c-source.html">remote_choice.c</a>.</p>
+
+</div>
+</div><p>
+<hr><h2>Dokumentacja zmiennych</h2>
+<a class="anchor" name="ddb79d7c8126cc39b3ae813081925480"></a><!-- doxytag: member="remote_choice.c::_day" ref="ddb79d7c8126cc39b3ae813081925480" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a> <a class="el" href="remote__choice_8c.html#ddb79d7c8126cc39b3ae813081925480">_day</a>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="remote__choice_8c-source.html#l00001">1</a> pliku <a class="el" href="remote__choice_8c-source.html">remote_choice.c</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="377255b34163fa46843fd625bd22e070"></a><!-- doxytag: member="remote_choice.c::_hour" ref="377255b34163fa46843fd625bd22e070" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a> <a class="el" href="remote__choice_8c.html#377255b34163fa46843fd625bd22e070">_hour</a>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="remote__choice_8c-source.html#l00001">1</a> pliku <a class="el" href="remote__choice_8c-source.html">remote_choice.c</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="9c31ef70c6b2462de2f0ab7e6df977b1"></a><!-- doxytag: member="remote_choice.c::_min" ref="9c31ef70c6b2462de2f0ab7e6df977b1" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a> <a class="el" href="remote__choice_8c.html#9c31ef70c6b2462de2f0ab7e6df977b1">_min</a>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="remote__choice_8c-source.html#l00001">1</a> pliku <a class="el" href="remote__choice_8c-source.html">remote_choice.c</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="ebf57b57af5afb0cab866eb1d88350b2"></a><!-- doxytag: member="remote_choice.c::_month" ref="ebf57b57af5afb0cab866eb1d88350b2" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a> <a class="el" href="remote__choice_8c.html#ebf57b57af5afb0cab866eb1d88350b2">_month</a>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="remote__choice_8c-source.html#l00001">1</a> pliku <a class="el" href="remote__choice_8c-source.html">remote_choice.c</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="274e6f04a50175c7fc3494aaa5850c1e"></a><!-- doxytag: member="remote_choice.c::_msec" ref="274e6f04a50175c7fc3494aaa5850c1e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a> <a class="el" href="remote__choice_8c.html#274e6f04a50175c7fc3494aaa5850c1e">_msec</a>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="remote__choice_8c-source.html#l00001">1</a> pliku <a class="el" href="remote__choice_8c-source.html">remote_choice.c</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="829224e56bc86013e756a62dcfd42e7a"></a><!-- doxytag: member="remote_choice.c::_sec" ref="829224e56bc86013e756a62dcfd42e7a" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a> <a class="el" href="remote__choice_8c.html#829224e56bc86013e756a62dcfd42e7a">_sec</a>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="remote__choice_8c-source.html#l00001">1</a> pliku <a class="el" href="remote__choice_8c-source.html">remote_choice.c</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="a9dd1b097f15329da17e6d8a5a9767c6"></a><!-- doxytag: member="remote_choice.c::_year" ref="a9dd1b097f15329da17e6d8a5a9767c6" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="global_8h.html#9e6c91d77e24643b888dbd1a1a590054">u16</a> <a class="el" href="remote__choice_8c.html#a9dd1b097f15329da17e6d8a5a9767c6">_year</a>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="remote__choice_8c-source.html#l00002">2</a> pliku <a class="el" href="remote__choice_8c-source.html">remote_choice.c</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="a3adb7926cfcbc30ae1782f4dec5d639"></a><!-- doxytag: member="remote_choice.c::hour1" ref="a3adb7926cfcbc30ae1782f4dec5d639" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a> <a class="el" href="remote__choice_8c.html#a3adb7926cfcbc30ae1782f4dec5d639">hour1</a>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="remote__choice_8c-source.html#l00001">1</a> pliku <a class="el" href="remote__choice_8c-source.html">remote_choice.c</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="48e0ff158c8a0f42291b824de5867a3c"></a><!-- doxytag: member="remote_choice.c::indexTimer" ref="48e0ff158c8a0f42291b824de5867a3c" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a> <a class="el" href="remote__choice_8c.html#48e0ff158c8a0f42291b824de5867a3c">indexTimer</a> = 0          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="remote__choice_8c-source.html#l00004">4</a> pliku <a class="el" href="remote__choice_8c-source.html">remote_choice.c</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="d59716252bf29c98b663100e23859f89"></a><!-- doxytag: member="remote_choice.c::min1" ref="d59716252bf29c98b663100e23859f89" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a> <a class="el" href="remote__choice_8c.html#d59716252bf29c98b663100e23859f89">min1</a>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="remote__choice_8c-source.html#l00001">1</a> pliku <a class="el" href="remote__choice_8c-source.html">remote_choice.c</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="97f7eefbf22cc5d55e882b3815c4f960"></a><!-- doxytag: member="remote_choice.c::msec1" ref="97f7eefbf22cc5d55e882b3815c4f960" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a> <a class="el" href="remote__choice_8c.html#97f7eefbf22cc5d55e882b3815c4f960">msec1</a>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="remote__choice_8c-source.html#l00001">1</a> pliku <a class="el" href="remote__choice_8c-source.html">remote_choice.c</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="052b4d847b2896a551443be39d1dc268"></a><!-- doxytag: member="remote_choice.c::sec1" ref="052b4d847b2896a551443be39d1dc268" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a> <a class="el" href="remote__choice_8c.html#052b4d847b2896a551443be39d1dc268">sec1</a>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="remote__choice_8c-source.html#l00001">1</a> pliku <a class="el" href="remote__choice_8c-source.html">remote_choice.c</a>.</p>
+
+</div>
+</div><p>
+<hr size="1"><address style="text-align: right;"><small>Wygenerowano Wed Jan 2 10:33:29 2008 dla URZYDZENIE STERUJACE OGRZEWANIEM Z WYKORZYSTANIEM MIKROKONTROLERA AVR programem&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.4 </small></address>
+</body>
+</html>

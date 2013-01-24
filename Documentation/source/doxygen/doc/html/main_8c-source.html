@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>URZYDZENIE STERUJACE OGRZEWANIEM Z WYKORZYSTANIEM MIKROKONTROLERA AVR: Plik źródłowy D:/CPP_pjojects/AVR/src/main.c</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Wygenerowano przez Doxygen 1.5.4 -->
+<div class="tabs">
+  <ul>
+    <li><a href="index.html"><span>Strona&nbsp;główna</span></a></li>
+    <li><a href="classes.html"><span>Klasy</span></a></li>
+    <li class="current"><a href="files.html"><span>Pliki</span></a></li>
+  </ul>
+</div>
+<h1>D:/CPP_pjojects/AVR/src/main.c</h1><a href="main_8c.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 
+<a name="l00010"></a>00010 <span class="preprocessor">#include &lt;avr/io.h&gt;</span>
+<a name="l00011"></a>00011 <span class="preprocessor">#include &lt;avr/pgmspace.h&gt;</span>
+<a name="l00012"></a>00012 <span class="preprocessor">#include &lt;avr/eeprom.h&gt;</span> 
+<a name="l00013"></a>00013 <span class="preprocessor">#include &lt;stdlib.h&gt;</span>
+<a name="l00014"></a>00014 <span class="preprocessor">#include &lt;avr/signal.h&gt;</span>
+<a name="l00015"></a>00015 <span class="preprocessor">#include "<a class="code" href="global_8h.html">global.h</a>"</span>
+<a name="l00016"></a>00016 <span class="preprocessor">#include "<a class="code" href="uart_8c.html">uart.c</a>"</span>
+<a name="l00017"></a>00017 <span class="preprocessor">#include "<a class="code" href="lcd_8c.html">lcd.c</a>"</span>
+<a name="l00018"></a>00018 <span class="preprocessor">#include "<a class="code" href="ds18b20_8c.html">ds18b20.c</a>"</span>
+<a name="l00019"></a>00019 <span class="preprocessor">#include "<a class="code" href="delay_8c.html">delay.c</a>"</span>
+<a name="l00020"></a>00020 <span class="preprocessor">#include "<a class="code" href="conversion_8c.html">conversion.c</a>"</span>
+<a name="l00021"></a>00021 <span class="preprocessor">#include "<a class="code" href="i2c_8h.html">i2c.h</a>"</span>
+<a name="l00022"></a>00022 <span class="preprocessor">#include "<a class="code" href="pcf8583_8c.html">pcf8583.c</a>"</span>
+<a name="l00023"></a>00023 <span class="preprocessor">#include "<a class="code" href="rc5_8c.html">rc5.c</a>"</span>
+<a name="l00024"></a>00024 <span class="preprocessor">#include "<a class="code" href="remote__choice_8c.html">remote_choice.c</a>"</span>
+<a name="l00025"></a>00025 <span class="preprocessor">#include "<a class="code" href="timer__menu_8c.html">timer_menu.c</a>"</span>
+<a name="l00026"></a>00026 <span class="preprocessor">#include "<a class="code" href="options__menu_8c.html">options_menu.c</a>"</span>
+<a name="l00027"></a>00027 <span class="preprocessor">#include "<a class="code" href="_p_c__connection_8c.html">PC_connection.c</a>"</span>
+<a name="l00028"></a>00028 <span class="preprocessor">#include "<a class="code" href="_p_c__menu_8c.html">PC_menu.c</a>"</span>
+<a name="l00029"></a>00029 <span class="preprocessor">#include "<a class="code" href="temp_8c.html">temp.c</a>"</span>
+<a name="l00030"></a>00030 <span class="preprocessor">#include "<a class="code" href="alarm_8c.html">alarm.c</a>"</span>
+<a name="l00031"></a>00031 
+<a name="l00032"></a>00032 
+<a name="l00033"></a>00033 
+<a name="l00037"></a><a class="code" href="main_8c.html#840291bc02cba5474a4cb46a9b9566fe">00037</a> <span class="keywordtype">int</span> <a class="code" href="main_8c.html#840291bc02cba5474a4cb46a9b9566fe">main</a>(<span class="keywordtype">void</span>)
+<a name="l00038"></a>00038 {        
+<a name="l00039"></a>00039         DDRD = 0xff;
+<a name="l00040"></a>00040         PORTD = 0xf0;   
+<a name="l00041"></a>00041         
+<a name="l00042"></a>00042         <a class="code" href="uart_8c.html#fa1f831e117484773eee40553b7d087b">UART_init</a>(16000000, 19200);                     
+<a name="l00043"></a>00043         <a class="code" href="lcd_8c.html#301a0b73016a44e015dbd374c08243d4">LCD_init</a>();
+<a name="l00044"></a>00044         <a class="code" href="pcf8583_8c.html#d972779453487ff25f3ca3cb47b29486">PCF8583_init</a>();
+<a name="l00045"></a>00045                 
+<a name="l00046"></a>00046         <a class="code" href="pcf8583_8c.html#fd1072b9658d0a5b517b5852ae3bb581">PCF8583_set_time</a>(19,45,0,0);
+<a name="l00047"></a>00047         <a class="code" href="pcf8583_8c.html#215cdf5813880bde2b7c7496578d8e78">PCF8583_set_date</a>(3,6,2007);     
+<a name="l00048"></a>00048         
+<a name="l00049"></a>00049         <span class="comment">//set the alarm off</span>
+<a name="l00050"></a>00050         <a class="code" href="pcf8583_8c.html#25f1637bdb88790a90305a15137463de">PCF8583_get_status</a>();
+<a name="l00051"></a>00051         <a class="code" href="pcf8583_8c.html#96eff83d6120b02306c63b237b56f618">PCF8583_status</a>|=4;
+<a name="l00052"></a>00052         <a class="code" href="pcf8583_8c.html#ec3d60008bcc874a6df0eab17590c08f">PCF8583_write</a>(0,<a class="code" href="pcf8583_8c.html#96eff83d6120b02306c63b237b56f618">PCF8583_status</a>);
+<a name="l00053"></a>00053         
+<a name="l00054"></a>00054         <a class="code" href="global_8h.html#8f357ddca1501d1d895c91b0c84a9e22">cbi</a>(PORTD, 6);
+<a name="l00055"></a>00055         
+<a name="l00056"></a>00056         <a class="code" href="global_8h.html#9e6c91d77e24643b888dbd1a1a590054">u16</a> code;
+<a name="l00057"></a>00057         
+<a name="l00058"></a>00058         <a class="code" href="lcd_8c.html#b3d3c08a4027d3e918914c1562ced027">LCD_clear</a>();
+<a name="l00059"></a>00059         
+<a name="l00060"></a>00060         <a class="code" href="ds18b20_8c.html#f10a6053bfe9293d3624f03148615f26">get_temperatureSilent</a>();
+<a name="l00061"></a>00061         <a class="code" href="remote__choice_8c.html#2b07fc4f4a062680410adefb08815d03">power_on</a>();     
+<a name="l00062"></a>00062         <span class="keywordflow">while</span>(1)
+<a name="l00063"></a>00063         {               
+<a name="l00064"></a>00064                 <span class="keywordflow">if</span>(<a class="code" href="global_8h.html#5bd37bd643c9890f2e534726291c21e0">m_requiresSettings</a> == <a class="code" href="global_8h.html#f1b90965e27ca63a959bd1e8ecd4baeb">SETTING_ALL</a>)
+<a name="l00065"></a>00065                 {
+<a name="l00066"></a>00066                         <a class="code" href="remote__choice_8c.html#19562d96ecbcf8a223d3c38b39993fbf">updateTime</a>();
+<a name="l00067"></a>00067                         <a class="code" href="remote__choice_8c.html#ac4a0e0b4ad49cbbab8b2626204f9492">updateTemperature</a>();
+<a name="l00068"></a>00068                         <a class="code" href="remote__choice_8c.html#c631b0e717a0bc940119122b77aaaa2c">dayNightDecision</a>();     
+<a name="l00069"></a>00069                 }
+<a name="l00070"></a>00070                 
+<a name="l00071"></a>00071                 
+<a name="l00072"></a>00072                         <a class="code" href="remote__choice_8c.html#2b07fc4f4a062680410adefb08815d03">power_on</a>();     
+<a name="l00073"></a>00073                         
+<a name="l00074"></a>00074                         code = <a class="code" href="rc5_8c.html#a5b6b63f55d4750c6edcd3d7a54daa11">decode_rc5</a>();
+<a name="l00075"></a>00075                         <span class="keywordflow">if</span> ( code != 0 )
+<a name="l00076"></a>00076                         {
+<a name="l00077"></a>00077                                 <a class="code" href="remote__choice_8c.html#dc309d405327b4e698ed1bb12d789d4b">remote_switch</a>(code);
+<a name="l00078"></a>00078                                 <span class="keywordflow">while</span> ( <a class="code" href="uart_8c.html#3e8ace2b62257b2f93d7c8d4f1fef48a">UART_unread_data</a>() ) <a class="code" href="uart_8c.html#ef231bfe1354febc924f818d22bb2d85">UART_getc</a>();
+<a name="l00079"></a>00079                         }                       
+<a name="l00080"></a>00080                 
+<a name="l00081"></a>00081                 <span class="comment">//if uart recieved something</span>
+<a name="l00082"></a>00082                 <span class="keywordflow">if</span> ( (<a class="code" href="_p_c__connection_8c.html#534332fe27236a621232cc906b7f887b">PC_get_msg</a>() == <a class="code" href="global_8h.html#52f78a3e4bca2f039b68d6469294cdbc">PC_CONNECT</a>) &amp; bit_is_clear(PORTD, 6) )
+<a name="l00083"></a>00083                 {
+<a name="l00084"></a>00084                         <a class="code" href="_p_c__connection_8c.html#1bb9f0ae901ab3c285bd17e72924ffa1">PC_connecting_show</a>();
+<a name="l00085"></a>00085                         <span class="keywordflow">do</span>
+<a name="l00086"></a>00086                         {               
+<a name="l00087"></a>00087                                 <a class="code" href="_p_c__connection_8c.html#058617c0565786c24d71b2ed3e19fb64">show_PC_menu</a>();         
+<a name="l00088"></a>00088                                 code = <a class="code" href="_p_c__connection_8c.html#534332fe27236a621232cc906b7f887b">PC_get_msg</a>();                            
+<a name="l00089"></a>00089                                 <a class="code" href="_p_c__connection_8c.html#a86354fbd4c03800a984b03633bcb12d">PC_switch</a>( code );                              
+<a name="l00090"></a>00090                         }
+<a name="l00091"></a>00091                         <span class="keywordflow">while</span>( code != <a class="code" href="global_8h.html#561f25718f0ec8a9e9407ffacf0d5e68">PC_DISCONNECT</a> );
+<a name="l00092"></a>00092                         <a class="code" href="_p_c__connection_8c.html#1e5a1058ce0376623cbc6aec9da99cd3">PC_disconnecting_show</a>();
+<a name="l00093"></a>00093                 }               
+<a name="l00094"></a>00094         }       
+<a name="l00095"></a>00095         <span class="keywordflow">return</span> 0;
+<a name="l00096"></a>00096 }
+</pre></div><hr size="1"><address style="text-align: right;"><small>Wygenerowano Wed Jan 2 10:33:28 2008 dla URZYDZENIE STERUJACE OGRZEWANIEM Z WYKORZYSTANIEM MIKROKONTROLERA AVR programem&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.4 </small></address>
+</body>
+</html>

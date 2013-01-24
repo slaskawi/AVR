@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html401/loose.dtd">
+<html>
+<!-- Created on September, 23 2005 by texi2html 1.76 -->
+<!--
+Written by: Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Many creative people <dev@texi2html.cvshome.org>
+Send bugs and suggestions to <users@texi2html.cvshome.org>
+
+-->
+<head>
+<title>AVRDUDE: B. Troubleshooting</title>
+
+<meta name="description" content="AVRDUDE: B. Troubleshooting">
+<meta name="keywords" content="AVRDUDE: B. Troubleshooting">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="texi2html 1.76">
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+pre.display {font-family: serif}
+pre.format {font-family: serif}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: serif; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: serif; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.sansserif {font-family:sans-serif; font-weight:normal;}
+ul.toc {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<a name="Troubleshooting"></a>
+<a name="SEC38"></a>
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="avrdude_16.html#SEC37" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[ &gt; ]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="avrdude_14.html#SEC15" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="avrdude.html#Top" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[ &gt;&gt; ]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="avrdude.html#Top" title="Cover (top) of document">Top</a>]</td>
+<td valign="middle" align="left">[<a href="avrdude_toc.html#SEC_Contents" title="Table of contents">Contents</a>]</td>
+<td valign="middle" align="left">[Index]</td>
+<td valign="middle" align="left">[<a href="avrdude_abt.html#SEC_About" title="About (help)"> ? </a>]</td>
+</tr></table>
+<h1 class="appendix"> B. Troubleshooting </h1>
+
+
+<p>In general, please report any bugs encountered via
+<a href="http://savannah.nongnu.org/bugs/?group=avrdude">http://savannah.nongnu.org/bugs/?group=avrdude</a>.
+</p>
+
+<ul>
+<li>
+Problem: I'm using a serial programmer under Windows and get the following
+error:
+
+<p><code>avrdude: serial_open(): can't set attributes for device &quot;com1&quot;</code>,
+</p>
+<p>Solution: This problem seems to appear with certain versions of Cygwin. Specifying
+<code>&quot;/dev/com1&quot;</code> instead of <code>&quot;com1&quot;</code> should help.
+</p>
+
+</li><li>
+Problem: I'm using linux and my AVR910 programmer is really slow.
+
+<p>Solution (short): <code>setserial <var>port</var> low_latency</code>
+</p>
+<p>Solution (long):
+There are two problems here. First, the system may wait some time before it
+passes data from the serial port to the program. Under Linux the following
+command works around this (you may need root privileges for this).
+</p>
+<p><code>setserial <var>port</var> low_latency</code>
+</p>
+<p>Secondly, the serial interface chip may delay the interrupt for some time.
+This behaviour can be changed by setting the FIFO-threshold to one. Under Linux this
+can only be done by changing the kernel source in <code>drivers/char/serial.c</code>.
+Search the file for <code>UART_FCR_TRIGGER_8</code> and replace it with <code>UART_FCR_TRIGGER_1</code>. Note that overall performance might suffer if there
+is high throughput on serial lines. Also note that you are modifying the kernel at
+your own risk.
+</p>
+
+</li><li>
+Problem: I'm not using linux and my AVR910 programmer is really slow.
+
+<p>Solutions: The reasons for this are the same as above.
+If you know how to work around this on your OS, please let us know.
+</p>
+</li><li>
+Problem: I cannot modify the fuse bits on my AVR!
+
+<p>Solution: You probably forgot to specify the -u option, which allows you to modify fuse bits.
+This is done to prevent corrupt data from changing the fuse bits without you knowing about it, and
+currently also prevents the user from changing the fuse bits by accident. This patch was added in
+response to a number of occasions when an AVR had stopped responding because the fuse bits got changed
+by an error caused by the programmer. Programmer of course meaning both the physical device, and the
+person sitting at the keyboard.
+</p>
+</li><li>
+Problem: AVRDUDE says my device is not supported when using the AVR109 boot loader
+
+<p>Solution: Currently, AVRDUDE uses the AVR910 device codes given in the
+<code>avrdude.conf</code> file, and matches them against the list of supported
+devices reported by the programmer.  Unfortunately, there are no device
+codes at all for some of the newer AVR devices, and even worse, the
+device codes listed in <code>preprocessor.xls</code> of appnote AVR109 do not
+match those once specified in AVR910.
+</p>
+<p>Use the -F option to force AVRDUDE to continue anyway.
+</p>
+</li><li>
+Problem: Updating the flash ROM from terminal mode does not work with the
+JTAG ICE mkII.
+
+<p>Solution: None at this time.  Currently, the JTAG ICE mkII code cannot
+write to the flash ROM one byte at a time.
+</p>
+
+
+</li></ul>
+
+
+
+<hr size="6">
+<table cellpadding="1" cellspacing="1" border="0">
+<tr><td valign="middle" align="left">[<a href="avrdude_16.html#SEC37" title="Previous section in reading order"> &lt; </a>]</td>
+<td valign="middle" align="left">[ &gt; ]</td>
+<td valign="middle" align="left"> &nbsp; </td>
+<td valign="middle" align="left">[<a href="avrdude_14.html#SEC15" title="Beginning of this chapter or previous chapter"> &lt;&lt; </a>]</td>
+<td valign="middle" align="left">[<a href="avrdude.html#Top" title="Up section"> Up </a>]</td>
+<td valign="middle" align="left">[ &gt;&gt; ]</td>
+</tr></table>
+<p>
+ <font size="-1">
+  This document was generated by <em>unknown</em> on <em>September, 23 2005</em> using <a href="http://texi2html.cvshome.org/"><em>texi2html 1.76</em></a>.
+ </font>
+ <br>
+
+</p>
+</body>
+</html>

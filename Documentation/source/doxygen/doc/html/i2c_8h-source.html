@@ -1,0 +1,155 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>URZYDZENIE STERUJACE OGRZEWANIEM Z WYKORZYSTANIEM MIKROKONTROLERA AVR: Plik źródłowy D:/CPP_pjojects/AVR/src/i2c.h</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Wygenerowano przez Doxygen 1.5.4 -->
+<div class="tabs">
+  <ul>
+    <li><a href="index.html"><span>Strona&nbsp;główna</span></a></li>
+    <li><a href="classes.html"><span>Klasy</span></a></li>
+    <li class="current"><a href="files.html"><span>Pliki</span></a></li>
+  </ul>
+</div>
+<h1>D:/CPP_pjojects/AVR/src/i2c.h</h1><a href="i2c_8h.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 
+<a name="l00009"></a><a class="code" href="i2c_8h.html#6dc81eed4977298b2cbb787da00fb5e4">00009</a> <span class="preprocessor">#define I2C_PORT_O      I2C_PORT</span>
+<a name="l00010"></a><a class="code" href="i2c_8h.html#6cdb7174a55c584eb2e6c7b262990ab2">00010</a> <span class="preprocessor"></span><span class="preprocessor">#define I2C_PORT_D      DDR(I2C_PORT)</span>
+<a name="l00011"></a><a class="code" href="i2c_8h.html#87de4dca29e3a98effa76b04859b0a96">00011</a> <span class="preprocessor"></span><span class="preprocessor">#define I2C_PORT_I      PIN(I2C_PORT)</span>
+<a name="l00012"></a>00012 <span class="preprocessor"></span>
+<a name="l00013"></a>00013 
+<a name="l00014"></a><a class="code" href="i2c_8h.html#5f618bfb69ff304730335c1cb03feb92">00014</a> <span class="preprocessor">#define I2C_SDA_WR()    sbi(I2C_PORT_D,I2C_SDA)</span>
+<a name="l00015"></a><a class="code" href="i2c_8h.html#3268765774dc252b95c96842229dcd69">00015</a> <span class="preprocessor"></span><span class="preprocessor">#define I2C_SDA_RD()    cbi(I2C_PORT_D,I2C_SDA)</span>
+<a name="l00016"></a><a class="code" href="i2c_8h.html#e33a7b221d2ebe2db08daaa7893c3c92">00016</a> <span class="preprocessor"></span><span class="preprocessor">#define I2C_SCL_WR()    sbi(I2C_PORT_D,I2C_SCL)</span>
+<a name="l00017"></a><a class="code" href="i2c_8h.html#2d7af243e051964837c486cc2fae4cbc">00017</a> <span class="preprocessor"></span><span class="preprocessor">#define I2C_SCL_RD()    cbi(I2C_PORT_D,I2C_SCL)</span>
+<a name="l00018"></a>00018 <span class="preprocessor"></span>
+<a name="l00019"></a>00019 
+<a name="l00020"></a><a class="code" href="i2c_8h.html#cb81e9d5706d5e1192b8f393379a74d9">00020</a> <span class="preprocessor">#define I2C_SDA_H()     sbi(I2C_PORT_O,I2C_SDA)</span>
+<a name="l00021"></a><a class="code" href="i2c_8h.html#4b55fc8f99cebb2fe11f16e80f3c05ce">00021</a> <span class="preprocessor"></span><span class="preprocessor">#define I2C_SDA_L()     cbi(I2C_PORT_O,I2C_SDA)</span>
+<a name="l00022"></a><a class="code" href="i2c_8h.html#aee2de32bbd3064d80cea72c13f1b6a3">00022</a> <span class="preprocessor"></span><span class="preprocessor">#define I2C_SCL_H()     sbi(I2C_PORT_O,I2C_SCL)</span>
+<a name="l00023"></a><a class="code" href="i2c_8h.html#30cab9290a69c14444e4aef39220d58d">00023</a> <span class="preprocessor"></span><span class="preprocessor">#define I2C_SCL_L()     cbi(I2C_PORT_O,I2C_SCL)</span>
+<a name="l00024"></a>00024 <span class="preprocessor"></span>
+<a name="l00025"></a>00025 
+<a name="l00033"></a><a class="code" href="i2c_8h.html#04ce4aaf182aef7f0c9a7ea77cf62e9a">00033</a> <a class="code" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a> <a class="code" href="i2c_8h.html#04ce4aaf182aef7f0c9a7ea77cf62e9a">I2C_read</a>(<a class="code" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a> ack)
+<a name="l00034"></a>00034 {
+<a name="l00035"></a>00035         <a class="code" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a> i;
+<a name="l00036"></a>00036         <a class="code" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a> b = 0;
+<a name="l00037"></a>00037         <span class="comment">//SDA = read</span>
+<a name="l00038"></a>00038         <a class="code" href="i2c_8h.html#3268765774dc252b95c96842229dcd69">I2C_SDA_RD</a>();
+<a name="l00039"></a>00039         <span class="comment">//SDA = 1;</span>
+<a name="l00040"></a>00040         <a class="code" href="i2c_8h.html#cb81e9d5706d5e1192b8f393379a74d9">I2C_SDA_H</a>();
+<a name="l00041"></a>00041         <a class="code" href="delay_8c.html#ee52b103a84d621862e484030b4202a1">waitms</a>(1);
+<a name="l00042"></a>00042         
+<a name="l00043"></a>00043         <span class="comment">//read 8 bits</span>
+<a name="l00044"></a>00044         <span class="keywordflow">for</span> (i=0; i&lt;8; i++)
+<a name="l00045"></a>00045         {
+<a name="l00046"></a>00046                 <span class="comment">//SCL = 1</span>
+<a name="l00047"></a>00047                 <a class="code" href="i2c_8h.html#aee2de32bbd3064d80cea72c13f1b6a3">I2C_SCL_H</a>();
+<a name="l00048"></a>00048                 <a class="code" href="delay_8c.html#ee52b103a84d621862e484030b4202a1">waitms</a>(1);
+<a name="l00049"></a>00049                 <span class="comment">//1 bit left</span>
+<a name="l00050"></a>00050                 b &lt;&lt;= 1;
+<a name="l00051"></a>00051                 <span class="comment">//if SDA == 1 add read bit</span>
+<a name="l00052"></a>00052                 <span class="keywordflow">if</span> (bit_is_set(<a class="code" href="i2c_8h.html#87de4dca29e3a98effa76b04859b0a96">I2C_PORT_I</a>,<a class="code" href="global_8h.html#18aefd12ad84d4c33dc97923cb821e47">I2C_SDA</a>)) 
+<a name="l00053"></a>00053                         b |= 1;
+<a name="l00054"></a>00054                 <span class="comment">//SCL = 0;</span>
+<a name="l00055"></a>00055                 <a class="code" href="i2c_8h.html#30cab9290a69c14444e4aef39220d58d">I2C_SCL_L</a>();
+<a name="l00056"></a>00056                 <a class="code" href="delay_8c.html#ee52b103a84d621862e484030b4202a1">waitms</a>(1);
+<a name="l00057"></a>00057         }
+<a name="l00058"></a>00058         <span class="comment">//SDA - write</span>
+<a name="l00059"></a>00059         <a class="code" href="i2c_8h.html#5f618bfb69ff304730335c1cb03feb92">I2C_SDA_WR</a>();
+<a name="l00060"></a>00060         <span class="comment">//check ACK</span>
+<a name="l00061"></a>00061         <span class="keywordflow">if</span> (ack == 0)
+<a name="l00062"></a>00062                 <a class="code" href="i2c_8h.html#4b55fc8f99cebb2fe11f16e80f3c05ce">I2C_SDA_L</a>();
+<a name="l00063"></a>00063         
+<a name="l00064"></a>00064         <span class="keywordflow">else</span>
+<a name="l00065"></a>00065                 <a class="code" href="i2c_8h.html#cb81e9d5706d5e1192b8f393379a74d9">I2C_SDA_H</a>();
+<a name="l00066"></a>00066   
+<a name="l00067"></a>00067         <a class="code" href="delay_8c.html#ee52b103a84d621862e484030b4202a1">waitms</a>(1);
+<a name="l00068"></a>00068         <a class="code" href="i2c_8h.html#aee2de32bbd3064d80cea72c13f1b6a3">I2C_SCL_H</a>();
+<a name="l00069"></a>00069         <a class="code" href="delay_8c.html#ee52b103a84d621862e484030b4202a1">waitms</a>(1);
+<a name="l00070"></a>00070         <a class="code" href="i2c_8h.html#30cab9290a69c14444e4aef39220d58d">I2C_SCL_L</a>();
+<a name="l00071"></a>00071         <a class="code" href="delay_8c.html#ee52b103a84d621862e484030b4202a1">waitms</a>(1);
+<a name="l00072"></a>00072         <a class="code" href="i2c_8h.html#4b55fc8f99cebb2fe11f16e80f3c05ce">I2C_SDA_L</a>();
+<a name="l00073"></a>00073         <a class="code" href="delay_8c.html#ee52b103a84d621862e484030b4202a1">waitms</a>(1);
+<a name="l00074"></a>00074         
+<a name="l00075"></a>00075         <span class="keywordflow">return</span>(b);
+<a name="l00076"></a>00076 }
+<a name="l00077"></a>00077 
+<a name="l00081"></a><a class="code" href="i2c_8h.html#62d959e4eb956935dc21708bfb8fad78">00081</a> <span class="keywordtype">void</span> <a class="code" href="i2c_8h.html#62d959e4eb956935dc21708bfb8fad78">I2C_start</a>(<span class="keywordtype">void</span>)
+<a name="l00082"></a>00082 {
+<a name="l00083"></a>00083         <span class="comment">//port directions</span>
+<a name="l00084"></a>00084         <a class="code" href="i2c_8h.html#aee2de32bbd3064d80cea72c13f1b6a3">I2C_SCL_H</a>();
+<a name="l00085"></a>00085         <a class="code" href="i2c_8h.html#cb81e9d5706d5e1192b8f393379a74d9">I2C_SDA_H</a>();
+<a name="l00086"></a>00086         <a class="code" href="i2c_8h.html#5f618bfb69ff304730335c1cb03feb92">I2C_SDA_WR</a>();
+<a name="l00087"></a>00087         <a class="code" href="i2c_8h.html#e33a7b221d2ebe2db08daaa7893c3c92">I2C_SCL_WR</a>();
+<a name="l00088"></a>00088         <a class="code" href="delay_8c.html#ee52b103a84d621862e484030b4202a1">waitms</a>(1);
+<a name="l00089"></a>00089         <a class="code" href="i2c_8h.html#4b55fc8f99cebb2fe11f16e80f3c05ce">I2C_SDA_L</a>();
+<a name="l00090"></a>00090         <a class="code" href="delay_8c.html#ee52b103a84d621862e484030b4202a1">waitms</a>(1);
+<a name="l00091"></a>00091         <a class="code" href="i2c_8h.html#30cab9290a69c14444e4aef39220d58d">I2C_SCL_L</a>();
+<a name="l00092"></a>00092         <a class="code" href="delay_8c.html#ee52b103a84d621862e484030b4202a1">waitms</a>(1);
+<a name="l00093"></a>00093 }
+<a name="l00094"></a>00094 
+<a name="l00098"></a><a class="code" href="i2c_8h.html#f6b4e1bf114a26416938dff94e24f3a5">00098</a> <span class="keywordtype">void</span> <a class="code" href="i2c_8h.html#f6b4e1bf114a26416938dff94e24f3a5">I2C_stop</a>(<span class="keywordtype">void</span>)
+<a name="l00099"></a>00099 {
+<a name="l00100"></a>00100         <span class="comment">//SDA - write</span>
+<a name="l00101"></a>00101         <a class="code" href="i2c_8h.html#5f618bfb69ff304730335c1cb03feb92">I2C_SDA_WR</a>();
+<a name="l00102"></a>00102         <a class="code" href="i2c_8h.html#aee2de32bbd3064d80cea72c13f1b6a3">I2C_SCL_H</a>();
+<a name="l00103"></a>00103         <a class="code" href="delay_8c.html#ee52b103a84d621862e484030b4202a1">waitms</a>(1);
+<a name="l00104"></a>00104         <a class="code" href="i2c_8h.html#cb81e9d5706d5e1192b8f393379a74d9">I2C_SDA_H</a>();
+<a name="l00105"></a>00105         <a class="code" href="delay_8c.html#ee52b103a84d621862e484030b4202a1">waitms</a>(1);
+<a name="l00106"></a>00106 }
+<a name="l00107"></a>00107 
+<a name="l00114"></a><a class="code" href="i2c_8h.html#37572ed4ee069451a447780f43edf5c6">00114</a> <a class="code" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a> <a class="code" href="i2c_8h.html#37572ed4ee069451a447780f43edf5c6">I2C_write</a>(<a class="code" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a> b)
+<a name="l00115"></a>00115 {
+<a name="l00116"></a>00116         <a class="code" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a> i;
+<a name="l00117"></a>00117         <span class="comment">//SDA - write</span>
+<a name="l00118"></a>00118         <a class="code" href="i2c_8h.html#5f618bfb69ff304730335c1cb03feb92">I2C_SDA_WR</a>();
+<a name="l00119"></a>00119         <span class="comment">//write 8 bits</span>
+<a name="l00120"></a>00120         <span class="keywordflow">for</span> (i=0; i&lt;8; i++)
+<a name="l00121"></a>00121         {
+<a name="l00122"></a>00122                 <span class="keywordflow">if</span> (b &amp; 0x80)
+<a name="l00123"></a>00123                         <a class="code" href="i2c_8h.html#cb81e9d5706d5e1192b8f393379a74d9">I2C_SDA_H</a>();
+<a name="l00124"></a>00124                         
+<a name="l00125"></a>00125                 <span class="keywordflow">else</span>
+<a name="l00126"></a>00126                         <a class="code" href="i2c_8h.html#4b55fc8f99cebb2fe11f16e80f3c05ce">I2C_SDA_L</a>();
+<a name="l00127"></a>00127                         
+<a name="l00128"></a>00128                 <a class="code" href="delay_8c.html#ee52b103a84d621862e484030b4202a1">waitms</a>(1);
+<a name="l00129"></a>00129                 <a class="code" href="i2c_8h.html#aee2de32bbd3064d80cea72c13f1b6a3">I2C_SCL_H</a>();
+<a name="l00130"></a>00130                 <a class="code" href="delay_8c.html#ee52b103a84d621862e484030b4202a1">waitms</a>(1);
+<a name="l00131"></a>00131                 <a class="code" href="i2c_8h.html#30cab9290a69c14444e4aef39220d58d">I2C_SCL_L</a>();
+<a name="l00132"></a>00132                 <span class="comment">//roll 1 left</span>
+<a name="l00133"></a>00133                 b &lt;&lt;= 1;
+<a name="l00134"></a>00134         }
+<a name="l00135"></a>00135         
+<a name="l00136"></a>00136         <span class="comment">//SDA - read</span>
+<a name="l00137"></a>00137         <a class="code" href="i2c_8h.html#3268765774dc252b95c96842229dcd69">I2C_SDA_RD</a>();
+<a name="l00138"></a>00138         <span class="comment">//Pull up SDA</span>
+<a name="l00139"></a>00139         <a class="code" href="i2c_8h.html#cb81e9d5706d5e1192b8f393379a74d9">I2C_SDA_H</a>();
+<a name="l00140"></a>00140         <a class="code" href="delay_8c.html#ee52b103a84d621862e484030b4202a1">waitms</a>(1);
+<a name="l00141"></a>00141         <span class="comment">//SCL = 1;</span>
+<a name="l00142"></a>00142         <a class="code" href="i2c_8h.html#aee2de32bbd3064d80cea72c13f1b6a3">I2C_SCL_H</a>();
+<a name="l00143"></a>00143         <a class="code" href="delay_8c.html#ee52b103a84d621862e484030b4202a1">waitms</a>(1);
+<a name="l00144"></a>00144         i=0xFF;
+<a name="l00145"></a>00145         
+<a name="l00146"></a>00146         <span class="keywordflow">do</span>
+<a name="l00147"></a>00147         {
+<a name="l00148"></a>00148                 <span class="comment">//if we have affirmation</span>
+<a name="l00149"></a>00149                 <span class="keywordflow">if</span> (bit_is_clear(<a class="code" href="i2c_8h.html#87de4dca29e3a98effa76b04859b0a96">I2C_PORT_I</a>,<a class="code" href="global_8h.html#18aefd12ad84d4c33dc97923cb821e47">I2C_SDA</a>))
+<a name="l00150"></a>00150                         <span class="keywordflow">break</span>;
+<a name="l00151"></a>00151                         
+<a name="l00152"></a>00152                 <a class="code" href="delay_8c.html#ee52b103a84d621862e484030b4202a1">waitms</a>(1);
+<a name="l00153"></a>00153         }
+<a name="l00154"></a>00154         <span class="keywordflow">while</span>(--i&gt;0);
+<a name="l00155"></a>00155         
+<a name="l00156"></a>00156         <span class="comment">//SCL = 0</span>
+<a name="l00157"></a>00157         <a class="code" href="i2c_8h.html#30cab9290a69c14444e4aef39220d58d">I2C_SCL_L</a>();
+<a name="l00158"></a>00158         <a class="code" href="delay_8c.html#ee52b103a84d621862e484030b4202a1">waitms</a>(1);
+<a name="l00159"></a>00159         <span class="keywordflow">return</span>(i);
+<a name="l00160"></a>00160 }
+<a name="l00161"></a>00161 
+<a name="l00162"></a>00162 
+</pre></div><hr size="1"><address style="text-align: right;"><small>Wygenerowano Wed Jan 2 10:33:28 2008 dla URZYDZENIE STERUJACE OGRZEWANIEM Z WYKORZYSTANIEM MIKROKONTROLERA AVR programem&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.4 </small></address>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>URZYDZENIE STERUJACE OGRZEWANIEM Z WYKORZYSTANIEM MIKROKONTROLERA AVR: Plik źródłowy D:/CPP_pjojects/AVR/src/conversion.c</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Wygenerowano przez Doxygen 1.5.4 -->
+<div class="tabs">
+  <ul>
+    <li><a href="index.html"><span>Strona&nbsp;główna</span></a></li>
+    <li><a href="classes.html"><span>Klasy</span></a></li>
+    <li class="current"><a href="files.html"><span>Pliki</span></a></li>
+  </ul>
+</div>
+<h1>D:/CPP_pjojects/AVR/src/conversion.c</h1><a href="conversion_8c.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#include "<a class="code" href="global_8h.html">global.h</a>"</span>
+<a name="l00002"></a>00002 
+<a name="l00008"></a><a class="code" href="conversion_8c.html#26cda9ea0b9189e787c958cc2a9c314c">00008</a> <span class="keywordtype">char</span> <a class="code" href="conversion_8c.html#26cda9ea0b9189e787c958cc2a9c314c">nibble2hex</a>(<a class="code" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a> val)  
+<a name="l00009"></a>00009 {
+<a name="l00010"></a>00010         <span class="keywordtype">char</span> s;
+<a name="l00011"></a>00011         s=<span class="charliteral">'0'</span>+(val&amp;0xf);
+<a name="l00012"></a>00012         <span class="keywordflow">if</span> (s&gt;<span class="charliteral">'9'</span>) s+=<span class="charliteral">'A'</span>-<span class="charliteral">'9'</span>-1;
+<a name="l00013"></a>00013         <span class="keywordflow">return</span> s;
+<a name="l00014"></a>00014 }
+<a name="l00015"></a>00015 
+<a name="l00019"></a><a class="code" href="conversion_8c.html#b4bdf376fc511e0ec2cab88abfb7a1e5">00019</a> <span class="keywordtype">void</span> <a class="code" href="conversion_8c.html#b4bdf376fc511e0ec2cab88abfb7a1e5">word2hex</a>(<a class="code" href="global_8h.html#9e6c91d77e24643b888dbd1a1a590054">u16</a> val, <span class="keywordtype">char</span> *s)  
+<a name="l00020"></a>00020 {
+<a name="l00021"></a>00021         s[0]=<a class="code" href="conversion_8c.html#26cda9ea0b9189e787c958cc2a9c314c">nibble2hex</a>(val&gt;&gt;12);
+<a name="l00022"></a>00022         s[1]=<a class="code" href="conversion_8c.html#26cda9ea0b9189e787c958cc2a9c314c">nibble2hex</a>(val&gt;&gt;8);
+<a name="l00023"></a>00023         s[2]=<a class="code" href="conversion_8c.html#26cda9ea0b9189e787c958cc2a9c314c">nibble2hex</a>(val&gt;&gt;4);
+<a name="l00024"></a>00024         s[3]=<a class="code" href="conversion_8c.html#26cda9ea0b9189e787c958cc2a9c314c">nibble2hex</a>(val);
+<a name="l00025"></a>00025         s[4]=0;
+<a name="l00026"></a>00026 }
+<a name="l00027"></a>00027 
+<a name="l00031"></a><a class="code" href="conversion_8c.html#2521d891b4767bcc4a03ece53d89d03e">00031</a> <a class="code" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a> <a class="code" href="conversion_8c.html#2521d891b4767bcc4a03ece53d89d03e">bcd2bin</a>(<a class="code" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a> bcd)                    
+<a name="l00032"></a>00032 {
+<a name="l00033"></a>00033 <span class="preprocessor">        #ifdef OPTIMIZE_SPEED</span>
+<a name="l00034"></a>00034 <span class="preprocessor"></span>        <span class="keywordflow">return</span> (10*(bcd&gt;&gt;4)|(bcd&amp;0x0f));
+<a name="l00035"></a>00035 <span class="preprocessor">        #else</span>
+<a name="l00036"></a>00036 <span class="preprocessor"></span>        <a class="code" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a> Temp = bcd &amp; 0x0F; 
+<a name="l00037"></a>00037         <span class="keywordflow">while</span> (bcd&gt;=0x10) 
+<a name="l00038"></a>00038         {        
+<a name="l00039"></a>00039                 Temp += 10; 
+<a name="l00040"></a>00040                 bcd -= 0x10; 
+<a name="l00041"></a>00041         } 
+<a name="l00042"></a>00042         <span class="keywordflow">return</span> Temp; 
+<a name="l00043"></a>00043 <span class="preprocessor">        #endif</span>
+<a name="l00044"></a>00044 <span class="preprocessor"></span>}
+<a name="l00045"></a>00045 
+<a name="l00049"></a><a class="code" href="conversion_8c.html#cbdce4e074ce0b6dcf4ff6074a98ff21">00049</a> <a class="code" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a> <a class="code" href="conversion_8c.html#cbdce4e074ce0b6dcf4ff6074a98ff21">bin2bcd</a>(<a class="code" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a> bin)                    
+<a name="l00050"></a>00050 {
+<a name="l00051"></a>00051 <span class="preprocessor">    #ifdef OPTIMIZE_SPEED</span>
+<a name="l00052"></a>00052 <span class="preprocessor"></span>        <span class="keywordflow">return</span> (((bin/10)&lt;&lt;4)|(bin%10));
+<a name="l00053"></a>00053 <span class="preprocessor">        #else</span>
+<a name="l00054"></a>00054 <span class="preprocessor"></span>        
+<a name="l00055"></a>00055         <a class="code" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a> Temp = 0; 
+<a name="l00056"></a>00056         <span class="keywordflow">while</span>(bin&gt;9) 
+<a name="l00057"></a>00057         {                
+<a name="l00058"></a>00058                 Temp += 0x10; 
+<a name="l00059"></a>00059                 bin-=10; 
+<a name="l00060"></a>00060         } 
+<a name="l00061"></a>00061         
+<a name="l00062"></a>00062         <span class="keywordflow">return</span> Temp+bin; 
+<a name="l00063"></a>00063 <span class="preprocessor">        #endif</span>
+<a name="l00064"></a>00064 <span class="preprocessor"></span> 
+<a name="l00065"></a>00065 }
+<a name="l00066"></a>00066 
+<a name="l00067"></a>00067 <span class="comment">/*</span>
+<a name="l00068"></a>00068 <span class="comment"> * Converts byte to decimal representation</span>
+<a name="l00069"></a>00069 <span class="comment"> */</span>
+<a name="l00070"></a><a class="code" href="conversion_8c.html#1aed87a3feda1dd522659af20524f1d4">00070</a> <span class="keywordtype">void</span> <a class="code" href="conversion_8c.html#1aed87a3feda1dd522659af20524f1d4">byte2dec</a>(<a class="code" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a> val, <span class="keywordtype">char</span> *s)  
+<a name="l00071"></a>00071 {
+<a name="l00072"></a>00072         s[0]=<span class="charliteral">'0'</span>+(val/10);
+<a name="l00073"></a>00073         s[1]=<span class="charliteral">'0'</span>+(val%10);
+<a name="l00074"></a>00074         s[2]=0;
+<a name="l00075"></a>00075 }
+<a name="l00076"></a>00076 
+<a name="l00080"></a><a class="code" href="conversion_8c.html#6dec8632b272db29d70274be3077a716">00080</a> <span class="keywordtype">void</span> <a class="code" href="conversion_8c.html#6dec8632b272db29d70274be3077a716">byte2hex</a>(<a class="code" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a> val, <span class="keywordtype">char</span> *s)  
+<a name="l00081"></a>00081 {
+<a name="l00082"></a>00082         s[0]=<a class="code" href="conversion_8c.html#26cda9ea0b9189e787c958cc2a9c314c">nibble2hex</a>(val&gt;&gt;4);
+<a name="l00083"></a>00083         s[1]=<a class="code" href="conversion_8c.html#26cda9ea0b9189e787c958cc2a9c314c">nibble2hex</a>(val);
+<a name="l00084"></a>00084         s[2]=0; 
+<a name="l00085"></a>00085 }
+<a name="l00086"></a>00086 
+<a name="l00090"></a><a class="code" href="conversion_8c.html#37117a1b3275c0a4973214d2fbb9e0f2">00090</a> <a class="code" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a> <a class="code" href="conversion_8c.html#37117a1b3275c0a4973214d2fbb9e0f2">str_to_int</a>( <span class="keywordtype">char</span> *s )
+<a name="l00091"></a>00091 {
+<a name="l00092"></a>00092         <a class="code" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a> value;
+<a name="l00093"></a>00093         
+<a name="l00094"></a>00094         <span class="keywordflow">if</span> (s[0] == 0) 
+<a name="l00095"></a>00095                 <span class="keywordflow">return</span> s[1];
+<a name="l00096"></a>00096 
+<a name="l00097"></a>00097         <span class="keywordflow">return</span> 0;
+<a name="l00098"></a>00098 }
+</pre></div><hr size="1"><address style="text-align: right;"><small>Wygenerowano Wed Jan 2 10:33:28 2008 dla URZYDZENIE STERUJACE OGRZEWANIEM Z WYKORZYSTANIEM MIKROKONTROLERA AVR programem&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.4 </small></address>
+</body>
+</html>

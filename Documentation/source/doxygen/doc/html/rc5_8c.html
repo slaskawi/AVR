@@ -1,0 +1,193 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>URZYDZENIE STERUJACE OGRZEWANIEM Z WYKORZYSTANIEM MIKROKONTROLERA AVR: Dokumentacja pliku D:/CPP_pjojects/AVR/src/rc5.c</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Wygenerowano przez Doxygen 1.5.4 -->
+<div class="tabs">
+  <ul>
+    <li><a href="index.html"><span>Strona&nbsp;g≈Ç√≥wna</span></a></li>
+    <li><a href="classes.html"><span>Klasy</span></a></li>
+    <li class="current"><a href="files.html"><span>Pliki</span></a></li>
+  </ul>
+</div>
+<h1>Dokumentacja pliku D:/CPP_pjojects/AVR/src/rc5.c</h1>
+<p>
+<div class="dynheader">
+Ten wykres pokazuje, kt√≥re pliki bezpo≈õrednio lub po≈õrednio za≈ÇƒÖczajƒÖ ten plik:</div>
+<div class="dynsection">
+</div>
+
+<p>
+<a href="rc5_8c-source.html">Id≈∫ do kodu ≈∫r√≥d≈Çowego tego pliku.</a><table border="0" cellpadding="0" cellspacing="0">
+<tr><td></td></tr>
+<tr><td colspan="2"><br><h2>Definicje</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="rc5_8c.html#a27dfcf9c5badbcdb4f87febf8ffed8d">REMOTE_PORT</a>&nbsp;&nbsp;&nbsp;PORTA</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Port, do ktÛrego jest pod≥πczone wyjúcie odbiornika IR.  <a href="#a27dfcf9c5badbcdb4f87febf8ffed8d"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="rc5_8c.html#0d72542e92fb3f59944363382f02f5cd">REMOTE_BIT</a>&nbsp;&nbsp;&nbsp;PD1</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Bit portu REMOTE_PORT, do ktÛrego jest pod≥πczone wyjúcie odbiornika IR.  <a href="#0d72542e92fb3f59944363382f02f5cd"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="rc5_8c.html#c72160adc980a2432e41b3680208d26c">REMOTE_STD</a>&nbsp;&nbsp;&nbsp;2</td></tr>
+
+<tr><td colspan="2"><br><h2>Funkcje</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="rc5_8c.html#3f787e8a4cd394a0488eef9c4f022b35">REMOTE_active</a> (void)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="global_8h.html#9e6c91d77e24643b888dbd1a1a590054">u16</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="rc5_8c.html#accae63e17789e8adcef98e639f63a1d">REMOTE_check</a> (<a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a> std)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="global_8h.html#9e6c91d77e24643b888dbd1a1a590054">u16</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="rc5_8c.html#2164604665405c99a7d5d76b0ae0ef9f">REMOTE_get</a> (void)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="global_8h.html#9e6c91d77e24643b888dbd1a1a590054">u16</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="rc5_8c.html#a5b6b63f55d4750c6edcd3d7a54daa11">decode_rc5</a> (void)</td></tr>
+
+</table>
+<hr><h2>Dokumentacja definicji</h2>
+<a class="anchor" name="0d72542e92fb3f59944363382f02f5cd"></a><!-- doxytag: member="rc5.c::REMOTE_BIT" ref="0d72542e92fb3f59944363382f02f5cd" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define REMOTE_BIT&nbsp;&nbsp;&nbsp;PD1          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Bit portu REMOTE_PORT, do ktÛrego jest pod≥πczone wyjúcie odbiornika IR. 
+<p>
+
+<p>Definicja w linii <a class="el" href="rc5_8c-source.html#l00002">2</a> pliku <a class="el" href="rc5_8c-source.html">rc5.c</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="a27dfcf9c5badbcdb4f87febf8ffed8d"></a><!-- doxytag: member="rc5.c::REMOTE_PORT" ref="a27dfcf9c5badbcdb4f87febf8ffed8d" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define REMOTE_PORT&nbsp;&nbsp;&nbsp;PORTA          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Port, do ktÛrego jest pod≥πczone wyjúcie odbiornika IR. 
+<p>
+
+<p>Definicja w linii <a class="el" href="rc5_8c-source.html#l00001">1</a> pliku <a class="el" href="rc5_8c-source.html">rc5.c</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="c72160adc980a2432e41b3680208d26c"></a><!-- doxytag: member="rc5.c::REMOTE_STD" ref="c72160adc980a2432e41b3680208d26c" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define REMOTE_STD&nbsp;&nbsp;&nbsp;2          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="rc5_8c-source.html#l00003">3</a> pliku <a class="el" href="rc5_8c-source.html">rc5.c</a>.</p>
+
+</div>
+</div><p>
+<hr><h2>Dokumentacja funkcji</h2>
+<a class="anchor" name="a5b6b63f55d4750c6edcd3d7a54daa11"></a><!-- doxytag: member="rc5.c::decode_rc5" ref="a5b6b63f55d4750c6edcd3d7a54daa11" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="global_8h.html#9e6c91d77e24643b888dbd1a1a590054">u16</a> decode_rc5           </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="rc5_8c-source.html#l00444">444</a> pliku <a class="el" href="rc5_8c-source.html">rc5.c</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="3f787e8a4cd394a0488eef9c4f022b35"></a><!-- doxytag: member="rc5.c::REMOTE_active" ref="3f787e8a4cd394a0488eef9c4f022b35" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int REMOTE_active           </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="rc5_8c-source.html#l00017">17</a> pliku <a class="el" href="rc5_8c-source.html">rc5.c</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="accae63e17789e8adcef98e639f63a1d"></a><!-- doxytag: member="rc5.c::REMOTE_check" ref="accae63e17789e8adcef98e639f63a1d" args="(u08 std)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="global_8h.html#9e6c91d77e24643b888dbd1a1a590054">u16</a> REMOTE_check           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a>&nbsp;</td>
+          <td class="paramname"> <em>std</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="rc5_8c-source.html#l00026">26</a> pliku <a class="el" href="rc5_8c-source.html">rc5.c</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="2164604665405c99a7d5d76b0ae0ef9f"></a><!-- doxytag: member="rc5.c::REMOTE_get" ref="2164604665405c99a7d5d76b0ae0ef9f" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="global_8h.html#9e6c91d77e24643b888dbd1a1a590054">u16</a> REMOTE_get           </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="rc5_8c-source.html#l00261">261</a> pliku <a class="el" href="rc5_8c-source.html">rc5.c</a>.</p>
+
+</div>
+</div><p>
+<hr size="1"><address style="text-align: right;"><small>Wygenerowano Wed Jan 2 10:33:29 2008 dla URZYDZENIE STERUJACE OGRZEWANIEM Z WYKORZYSTANIEM MIKROKONTROLERA AVR programem&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.4 </small></address>
+</body>
+</html>

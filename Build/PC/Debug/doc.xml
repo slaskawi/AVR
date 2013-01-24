@@ -1,0 +1,815 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Avr controller</name>
+    </assembly>
+    <members>
+        <member name="T:Projekt.Temperature">
+            <summary>
+            This class is used for temperature debugging.
+            </summary>
+        </member>
+        <member name="M:Projekt.Temperature.#ctor(Projekt.Form1)">
+            <summary>
+            Public constructor. Initializes necessary components.
+            </summary>
+            <param name="f"></param>
+        </member>
+        <member name="M:Projekt.Temperature.addDataToDisplay(System.String)">
+            <summary>
+            This method is responsible for displaying recieved data in textBox.
+            (ThreadSafety!)
+            </summary>
+            <param name="msg"></param>
+        </member>
+        <member name="M:Projekt.Temperature.Temperature_Disposed(System.Object,System.EventArgs)">
+            <summary>
+            Disposing operations.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Projekt.Temperature.button1_Click(System.Object,System.EventArgs)">
+            <summary>
+            Turn off autocheck.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Projekt.Temperature.button2_Click(System.Object,System.EventArgs)">
+            <summary>
+            Turn on autocheck.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Projekt.Temperature.button3_Click(System.Object,System.EventArgs)">
+            <summary>
+            Manual check.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:Projekt.Temperature.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Projekt.Temperature.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Projekt.Temperature.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Projekt.Console">
+            <summary>
+            This is Console class. Allows user to manually send and recieve data from port.
+            </summary>
+        </member>
+        <member name="M:Projekt.Console.#ctor(Projekt.Form1)">
+            <summary>
+            Public constructor. Initializes necessary components.
+            </summary>
+            <param name="f"></param>
+        </member>
+        <member name="M:Projekt.Console.button1_Click(System.Object,System.EventArgs)">
+            <summary>
+            Sends via port given string.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Projekt.Console.addDataToDisplay(System.String)">
+            <summary>
+            This method is responsible for displaying recieved data in textBox.
+            (ThreadSafety!)
+            </summary>
+            <param name="msg"></param>
+        </member>
+        <member name="M:Projekt.Console.button2_Click(System.Object,System.EventArgs)">
+            <summary>
+            Clears textBox.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Projekt.Console.Console_Disposed(System.Object,System.EventArgs)">
+            <summary>
+            Disposing operations.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:Projekt.Console.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Projekt.Console.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Projekt.Console.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Projekt.PCFDebug">
+            <summary>
+            This class is used for PCF debugging.
+            </summary>
+        </member>
+        <member name="F:Projekt.PCFDebug.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Projekt.PCFDebug.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Projekt.PCFDebug.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Projekt.PCFDebug.#ctor(Projekt.Form1)">
+            <summary>
+            Public constructor. Initializes necessary components.
+            </summary>
+            <param name="f"></param>
+        </member>
+        <member name="M:Projekt.PCFDebug.PCFDebug_Disposed(System.Object,System.EventArgs)">
+            <summary>
+            Disposing operations.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Projekt.PCFDebug.addDataToDisplay(System.String)">
+            <summary>
+            This method is responsible for displaying recieved data in textBox.
+            (ThreadSafety!)
+            </summary>
+            <param name="msg"></param>
+        </member>
+        <member name="M:Projekt.PCFDebug.button1_Click(System.Object,System.EventArgs)">
+            <summary>
+            Turn off autocheck.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Projekt.PCFDebug.button2_Click(System.Object,System.EventArgs)">
+            <summary>
+            Turn on autocheck.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Projekt.PCFDebug.button3_Click(System.Object,System.EventArgs)">
+            <summary>
+            Manual check.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:Projekt.WaitingWindow_.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Projekt.WaitingWindow_.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Projekt.WaitingWindow_.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Projekt.Graph">
+            <summary>
+            This class is responsible for drawing temperature = f (time) chart.
+            </summary>
+        </member>
+        <member name="F:Projekt.Graph.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Projekt.Graph.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Projekt.Graph.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Projekt.Graph.#ctor(Projekt.Form1)">
+            <summary>
+            Public constructor.
+            Initializes form and graph.
+            </summary>
+            <param name="f"></param>
+        </member>
+        <member name="M:Projekt.Graph.button1_Click(System.Object,System.EventArgs)">
+            <summary>
+            Autocheck button.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Projekt.Graph.button2_Click(System.Object,System.EventArgs)">
+            <summary>
+            Stop checking.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Projekt.Graph.button3_Click(System.Object,System.EventArgs)">
+            <summary>
+            Generate XML.
+            This method uses DOM to fill and save XML file.
+            The chart date is converted to narmal date while saving.
+            Below is used schema:
+            [year,month,day,hour,minute,second]
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Projekt.Graph.Graph_Disposed(System.Object,System.EventArgs)">
+            <summary>
+            Clean up!
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Projekt.Graph.addDataToDisplay(System.String)">
+            <summary>
+            Adds text to text box and to graph.
+            </summary>
+            <param name="msg"></param>
+        </member>
+        <member name="F:Projekt.About.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Projekt.About.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+        </member>
+        <member name="M:Projekt.About.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:Projekt.Setup">
+            <summary>
+            This class is used to set up avr properties and write it to chip.
+            </summary>
+        </member>
+        <member name="F:Projekt.Setup.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Projekt.Setup.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Projekt.Setup.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Projekt.Setup.#ctor(Projekt.Form1)">
+            <summary>
+            Public constructor. Initializes necessary components.
+            </summary>
+            <param name="f"></param>
+        </member>
+        <member name="M:Projekt.Setup.button1_Click(System.Object,System.EventArgs)">
+            <summary>
+            Used to send time settings.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Projekt.Setup.button2_Click(System.Object,System.EventArgs)">
+            <summary>
+            Used to send date settings.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Projekt.Setup.button3_Click(System.Object,System.EventArgs)">
+            <summary>
+            Used to send temperature settings.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Projekt.Setup.button4_Click(System.Object,System.EventArgs)">
+            <summary>
+            Send all
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Projekt.Setup.Setup_Load(System.Object,System.EventArgs)">
+            <summary>
+            Loads default values into fields.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Projekt.Setup.Setup_Disposed(System.Object,System.EventArgs)">
+            <summary>
+            Disposing operations.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Projekt.Setup.paintError(System.String)">
+            <summary>
+            Displays error message to user.
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:Projekt.Setup.button5_Click(System.Object,System.EventArgs)">
+            <summary>
+            Sends night settings.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:Projekt.Settings.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Projekt.Settings.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Projekt.Settings.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Projekt.Settings.#ctor(Projekt.Form1)">
+            <summary>
+            Public constructor. Initializes necessary components.
+            </summary>
+            <param name="f"></param>
+        </member>
+        <member name="M:Projekt.Settings.addDataToDisplay(System.String)">
+            <summary>
+            This method is responsible for displaying recieved data in textBox.
+            (ThreadSafety!)
+            </summary>
+            <param name="msg"></param>
+        </member>
+        <member name="M:Projekt.Settings.Settings_Disposed(System.Object,System.EventArgs)">
+            <summary>
+            Disposing operations.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Projekt.Settings.button1_Click(System.Object,System.EventArgs)">
+            <summary>
+            Check button action.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:Projekt.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Projekt.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Projekt.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="T:Projekt.Form1">
+            <summary>
+            Main frame class. 
+            Displays menu and handles Serial Port connection.
+            </summary>
+        </member>
+        <member name="F:Projekt.Form1.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Projekt.Form1.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Projekt.Form1.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Projekt.Form1.DEBUG">
+            <summary>
+            This variable is used dor debugging.
+            In release version is should be set to false
+            </summary>
+        </member>
+        <member name="F:Projekt.Form1.s_logger">
+            <summary>
+            Waiting window reference.
+            </summary>
+        </member>
+        <member name="F:Projekt.Form1.s_currentState">
+            <summary>
+            This variable indicates current application state.
+            iex. Main frame or Console.
+            It should be used with e_states enum.
+            </summary>
+        </member>
+        <member name="F:Projekt.Form1.s_portNames">
+            <summary>
+            public Serial port properties.
+            </summary>
+        </member>
+        <member name="F:Projekt.Form1.m_serialPort">
+            <summary>
+            Public serial port reference.
+            </summary>
+        </member>
+        <member name="F:Projekt.Form1.m_isConnected">
+            <summary>
+            This variable is set to true is we have serial port connection.
+            </summary>
+        </member>
+        <member name="M:Projekt.Form1.#ctor">
+            <summary>
+            Public constructor - initializes all components
+            </summary>
+        </member>
+        <member name="M:Projekt.Form1.initLogger">
+            <summary>
+            Initializes logging engine.
+            </summary>
+        </member>
+        <member name="M:Projekt.Form1.closeLogger">
+            <summary>
+            Closes logging engine.
+            </summary>
+        </member>
+        <member name="M:Projekt.Form1.log(System.Int32,System.String,System.String)">
+            <summary>
+            Loggs given string on given level with given tag.
+            </summary>
+            <param name="level"></param>
+            <param name="tag"></param>
+            <param name="message"></param>
+        </member>
+        <member name="M:Projekt.Form1.logException(System.String)">
+            <summary>
+            Used to log exceptions.
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:Projekt.Form1.logUserAction(System.String)">
+            <summary>
+            Used to log user actions.
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:Projekt.Form1.log(System.String)">
+            <summary>
+            Used to log given string.
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:Projekt.Form1.exitToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            Exit choosen from the menu strip - exit application.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Projekt.Form1.aboutToolStripMenuItem_Click(System.Object,System.EventArgs)">
+            <summary>
+            About choosen from the menu strip - display about
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Projekt.Form1.button1_Click(System.Object,System.EventArgs)">
+            <summary>
+            Connect is enabled. Open port and sent information about connection
+            to avr. Here can be thrown an exception. If it is ask the user to retry
+            action. It is also used to disconnect.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Projekt.Form1.sendDataViaPort(System.String)">
+            <summary>
+            Sends via opened Serial port message.
+            If an exception is thrown the user is asked to restart application.
+            This is a serius error.
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:Projekt.Form1.m_serialPort_DataReceived(System.Object,System.EventArgs)">
+            <summary>
+            Gets from the Serial port string and passes it into proper form.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Projekt.Form1.button2_Click(System.Object,System.EventArgs)">
+            <summary>
+            Shows console.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Projekt.Form1.button3_Click(System.Object,System.EventArgs)">
+            <summary>
+            Shows PCFDebug.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Projekt.Form1.button4_Click(System.Object,System.EventArgs)">
+            <summary>
+            Shows temperature debug
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Projekt.Form1.button5_Click(System.Object,System.EventArgs)">
+            <summary>
+            Shows Settings panel.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Projekt.Form1.button6_Click(System.Object,System.EventArgs)">
+            <summary>
+            Sets setup panel.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Projekt.Form1.helpToolStripMenuItem1_Click(System.Object,System.EventArgs)">
+            <summary>
+            Help was choosen from menu strip - show help chm
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="P:Projekt.Form1.state">
+            <summary>
+            Sets or gets current state of application.
+            </summary>
+        </member>
+        <member name="T:Projekt.Form1.e_states">
+            <summary>
+            Proper application states.
+            </summary>
+        </member>
+        <member name="M:Projekt.Program.Main">
+            <summary>
+            The main entry point for the application.
+            </summary>
+        </member>
+        <member name="T:VS.Logger.LoggerMessage">
+            <summary>
+            Represents a log message
+            </summary>
+        </member>
+        <member name="T:VS.Logger.LoggerEventHandler">
+            <summary>
+            Abstract class responsible managing (in the form or a queue) and dispatching log messages
+            to their appropriate source.  The basic premises is that everything from a file writers, 
+            to an e-mailer, to an syslog interface, to a db interface, etc... could be implemented and the only
+            thing the implementer would need to worry about was the interface.
+            </summary>
+        </member>
+        <member name="M:VS.Logger.LoggerEventHandler.start">
+            <summary>
+            Starts the execution of the Handler (e.g. Queue goes live)
+            </summary>
+        </member>
+        <member name="M:VS.Logger.LoggerEventHandler.shutdown">
+            <summary>
+            Stops the execution of the Handler gracefully (e.g. everything in the queue is
+            dispatched, but nothing can be added to it)
+            </summary>
+        </member>
+        <member name="M:VS.Logger.LoggerEventHandler.abort">
+            <summary>
+            Will immediately shutdown the thread without cleaning up or clearing
+            out the queue.  Consequently this is not the recommended way to terminate.
+            </summary>
+        </member>
+        <member name="M:VS.Logger.LoggerEventHandler.dispatchMessages">
+            <summary>
+            This is the worker method where the messages get dispatched
+            </summary>
+        </member>
+        <member name="M:VS.Logger.LoggerEventHandler.log(System.String,System.Int32,System.String,System.String)">
+            <summary>
+            Responsible for queuing the log message
+            </summary>
+            <param name="tag"></param>
+            <param name="level"></param>
+            <param name="level_desc"></param>
+            <param name="message"></param>
+        </member>
+        <member name="M:VS.Logger.LoggerEventHandler.log(VS.Logger.LoggerMessage)">
+            <summary>
+            User implementable log method (e.g. what actions they need to take to perform
+            a "log" operation, like logging to a file for example).
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:VS.Logger.LoggerEventHandler.onShutdown">
+            <summary>
+            User implementable, meant for cleanup when the thread is stopped (e.g. if you need to
+            close files, db connections, etc...)
+            </summary>
+        </member>
+        <member name="T:VS.Logger.Class1">
+            <summary>
+            Test class, by no means a unit test, but more for experimenting
+            </summary>
+        </member>
+        <member name="T:VS.Logger.Class1.BasicFileLogEventHandler">
+            <summary>
+            Simple To File Logger.  All messages a written out to a flat text file.
+            </summary>
+        </member>
+        <member name="M:VS.Logger.Class1.BasicFileLogEventHandler.setAppend(System.Boolean)">
+            <summary>
+            Flag to append the text file.  If this flag is not set it will overwrite.
+            </summary>
+            <param name="flag"></param>
+        </member>
+        <member name="M:VS.Logger.Class1.BasicFileLogEventHandler.getAppend">
+            <summary>
+            Get's append flag
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:VS.Logger.Class1.Logger">
+            <summary>
+            Primary class responsbile for logging.  This class is a combination between a singleton
+            and a regular class to allow for the developers to have more customability.
+            
+            One thing worth mentioning, the only thing that this system will not allow developers to
+            customize is the use of consecutive integers for log levels starting at 0.  Developers are
+            free to use however many levels they want, define them however they want, however... that is the
+            one limitation I am comfortable placing on them.
+            </summary>
+        </member>
+        <member name="M:VS.Logger.Class1.Logger.#ctor(System.UInt32,VS.Logger.LoggerEventHandler)">
+            <summary>
+            With this constructor the developer is responsible for defining what
+            they want the logger to do (in the defaultHandler).
+            </summary>
+            <param name="levels"></param>
+            <param name="defaultHandler"></param>
+        </member>
+        <member name="M:VS.Logger.Class1.Logger.#ctor(System.UInt32,System.String)">
+            <summary>
+            Opens up a standard to file logger with the specified number of log levels.
+            </summary>
+            <param name="levels"></param>
+            <param name="filename"></param>
+        </member>
+        <member name="M:VS.Logger.Class1.Logger.#ctor(System.UInt32)">
+            <summary>
+            User specifies only the number of log levels they require.  They are still obligated
+            (assuming they want the logger to do something) to add a handler.
+            </summary>
+            <param name="levels"></param>
+        </member>
+        <member name="M:VS.Logger.Class1.Logger.promoteToStatic">
+            <summary>
+            Takes the current object and places it as the internal singleton reference
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:VS.Logger.Class1.Logger.singleton">
+            <summary>
+            The singleton can get set in two ways:
+            
+            1.) The developer promotes their class to be the Logger object inside the singleton
+            2.) We decide for them what their class is going to look like
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:VS.Logger.Class1.Logger.init(System.UInt32,VS.Logger.LoggerEventHandler)">
+            <summary>
+            Effectively the constructor (so no code would have to be repeated).  Consequently
+            if one were to try to put this block inside the constructor matching the signature and
+            then referenced it with :this(levels, defaultHandler) in the other constructors MS
+            has a bit of a fit.  Dunno...this works, don't really care.
+            </summary>
+            <param name="levels"></param>
+            <param name="defaultHandler"></param>
+        </member>
+        <member name="M:VS.Logger.Class1.Logger.setMaximumLogLevel(System.UInt32)">
+            <summary>
+            This is the maximum level which will trigger logging.
+            </summary>
+            <param name="min"></param>
+        </member>
+        <member name="M:VS.Logger.Class1.Logger.getMaximumLogLevel">
+            <summary>
+            Retrieve maximum logging level (note: this is not the total number of levels, but rather
+            the upper bound where an action will or won't take placed based on the log level)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:VS.Logger.Class1.Logger.getDefaultLoggerEventHandler">
+            <summary>
+            Retreives the default handler if one is set
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:VS.Logger.Class1.Logger.addSpecialLoggerToAllLevels(VS.Logger.LoggerEventHandler)">
+            <summary>
+            Adds a customized log handler to each log level
+            </summary>
+            <param name="handler"></param>
+        </member>
+        <member name="M:VS.Logger.Class1.Logger.addSpecialLogger(System.Int32,VS.Logger.LoggerEventHandler)">
+            <summary>
+            Adds a customized logger handler (e.g. log to file) to a specific level.
+            Note: You can have (n log handlers assuming your system has the resources)
+            </summary>
+            <param name="level"></param>
+            <param name="handler"></param>
+        </member>
+        <member name="M:VS.Logger.Class1.Logger.addSpecialLogger(System.Int32,System.String)">
+            <summary>
+            Sugared method to add a simple file handler method
+            </summary>
+            <param name="level"></param>
+            <param name="filename"></param>
+        </member>
+        <member name="M:VS.Logger.Class1.Logger.log(System.Int32,System.String,System.String)">
+            <summary>
+            Invokes all appropriate log event handlers with the message
+            </summary>
+            <param name="level"></param>
+            <param name="tag"></param>
+            <param name="message"></param>
+        </member>
+        <member name="M:VS.Logger.Class1.Logger.shutdown">
+            <summary>
+            Invokes the shutdown method for all log handlers
+            </summary>
+        </member>
+    </members>
+</doc>

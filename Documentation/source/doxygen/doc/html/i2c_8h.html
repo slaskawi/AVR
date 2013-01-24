@@ -1,0 +1,392 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>URZYDZENIE STERUJACE OGRZEWANIEM Z WYKORZYSTANIEM MIKROKONTROLERA AVR: Dokumentacja pliku D:/CPP_pjojects/AVR/src/i2c.h</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Wygenerowano przez Doxygen 1.5.4 -->
+<div class="tabs">
+  <ul>
+    <li><a href="index.html"><span>Strona&nbsp;główna</span></a></li>
+    <li><a href="classes.html"><span>Klasy</span></a></li>
+    <li class="current"><a href="files.html"><span>Pliki</span></a></li>
+  </ul>
+</div>
+<h1>Dokumentacja pliku D:/CPP_pjojects/AVR/src/i2c.h</h1>
+<p>
+<div class="dynheader">
+Ten wykres pokazuje, które pliki bezpośrednio lub pośrednio załączają ten plik:</div>
+<div class="dynsection">
+</div>
+
+<p>
+<a href="i2c_8h-source.html">Idź do kodu źródłowego tego pliku.</a><table border="0" cellpadding="0" cellspacing="0">
+<tr><td></td></tr>
+<tr><td colspan="2"><br><h2>Definicje</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="i2c_8h.html#6dc81eed4977298b2cbb787da00fb5e4">I2C_PORT_O</a>&nbsp;&nbsp;&nbsp;I2C_PORT</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="i2c_8h.html#6cdb7174a55c584eb2e6c7b262990ab2">I2C_PORT_D</a>&nbsp;&nbsp;&nbsp;DDR(I2C_PORT)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="i2c_8h.html#87de4dca29e3a98effa76b04859b0a96">I2C_PORT_I</a>&nbsp;&nbsp;&nbsp;PIN(I2C_PORT)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="i2c_8h.html#5f618bfb69ff304730335c1cb03feb92">I2C_SDA_WR</a>()&nbsp;&nbsp;&nbsp;sbi(I2C_PORT_D,I2C_SDA)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="i2c_8h.html#3268765774dc252b95c96842229dcd69">I2C_SDA_RD</a>()&nbsp;&nbsp;&nbsp;cbi(I2C_PORT_D,I2C_SDA)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="i2c_8h.html#e33a7b221d2ebe2db08daaa7893c3c92">I2C_SCL_WR</a>()&nbsp;&nbsp;&nbsp;sbi(I2C_PORT_D,I2C_SCL)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="i2c_8h.html#2d7af243e051964837c486cc2fae4cbc">I2C_SCL_RD</a>()&nbsp;&nbsp;&nbsp;cbi(I2C_PORT_D,I2C_SCL)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="i2c_8h.html#cb81e9d5706d5e1192b8f393379a74d9">I2C_SDA_H</a>()&nbsp;&nbsp;&nbsp;sbi(I2C_PORT_O,I2C_SDA)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="i2c_8h.html#4b55fc8f99cebb2fe11f16e80f3c05ce">I2C_SDA_L</a>()&nbsp;&nbsp;&nbsp;cbi(I2C_PORT_O,I2C_SDA)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="i2c_8h.html#aee2de32bbd3064d80cea72c13f1b6a3">I2C_SCL_H</a>()&nbsp;&nbsp;&nbsp;sbi(I2C_PORT_O,I2C_SCL)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="i2c_8h.html#30cab9290a69c14444e4aef39220d58d">I2C_SCL_L</a>()&nbsp;&nbsp;&nbsp;cbi(I2C_PORT_O,I2C_SCL)</td></tr>
+
+<tr><td colspan="2"><br><h2>Funkcje</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="i2c_8h.html#04ce4aaf182aef7f0c9a7ea77cf62e9a">I2C_read</a> (<a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a> ack)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="i2c_8h.html#62d959e4eb956935dc21708bfb8fad78">I2C_start</a> (void)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="i2c_8h.html#f6b4e1bf114a26416938dff94e24f3a5">I2C_stop</a> (void)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="i2c_8h.html#37572ed4ee069451a447780f43edf5c6">I2C_write</a> (<a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a> b)</td></tr>
+
+</table>
+<hr><h2>Dokumentacja definicji</h2>
+<a class="anchor" name="6cdb7174a55c584eb2e6c7b262990ab2"></a><!-- doxytag: member="i2c.h::I2C_PORT_D" ref="6cdb7174a55c584eb2e6c7b262990ab2" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define I2C_PORT_D&nbsp;&nbsp;&nbsp;DDR(I2C_PORT)          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="i2c_8h-source.html#l00010">10</a> pliku <a class="el" href="i2c_8h-source.html">i2c.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="87de4dca29e3a98effa76b04859b0a96"></a><!-- doxytag: member="i2c.h::I2C_PORT_I" ref="87de4dca29e3a98effa76b04859b0a96" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define I2C_PORT_I&nbsp;&nbsp;&nbsp;PIN(I2C_PORT)          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="i2c_8h-source.html#l00011">11</a> pliku <a class="el" href="i2c_8h-source.html">i2c.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="6dc81eed4977298b2cbb787da00fb5e4"></a><!-- doxytag: member="i2c.h::I2C_PORT_O" ref="6dc81eed4977298b2cbb787da00fb5e4" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define I2C_PORT_O&nbsp;&nbsp;&nbsp;I2C_PORT          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+This file is responsible for I2C operations <dl class="author" compact><dt><b>Autor:</b></dt><dd>Sebastian Laskawiec and Michal Wachowicz I2C port Configuration </dd></dl>
+
+<p>Definicja w linii <a class="el" href="i2c_8h-source.html#l00009">9</a> pliku <a class="el" href="i2c_8h-source.html">i2c.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="aee2de32bbd3064d80cea72c13f1b6a3"></a><!-- doxytag: member="i2c.h::I2C_SCL_H" ref="aee2de32bbd3064d80cea72c13f1b6a3" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define I2C_SCL_H          </td>
+          <td>(</td>
+&nbsp;</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%">&nbsp;&nbsp;&nbsp;sbi(I2C_PORT_O,I2C_SCL)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="i2c_8h-source.html#l00022">22</a> pliku <a class="el" href="i2c_8h-source.html">i2c.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="30cab9290a69c14444e4aef39220d58d"></a><!-- doxytag: member="i2c.h::I2C_SCL_L" ref="30cab9290a69c14444e4aef39220d58d" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define I2C_SCL_L          </td>
+          <td>(</td>
+&nbsp;</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%">&nbsp;&nbsp;&nbsp;cbi(I2C_PORT_O,I2C_SCL)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="i2c_8h-source.html#l00023">23</a> pliku <a class="el" href="i2c_8h-source.html">i2c.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="2d7af243e051964837c486cc2fae4cbc"></a><!-- doxytag: member="i2c.h::I2C_SCL_RD" ref="2d7af243e051964837c486cc2fae4cbc" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define I2C_SCL_RD          </td>
+          <td>(</td>
+&nbsp;</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%">&nbsp;&nbsp;&nbsp;cbi(I2C_PORT_D,I2C_SCL)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="i2c_8h-source.html#l00017">17</a> pliku <a class="el" href="i2c_8h-source.html">i2c.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="e33a7b221d2ebe2db08daaa7893c3c92"></a><!-- doxytag: member="i2c.h::I2C_SCL_WR" ref="e33a7b221d2ebe2db08daaa7893c3c92" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define I2C_SCL_WR          </td>
+          <td>(</td>
+&nbsp;</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%">&nbsp;&nbsp;&nbsp;sbi(I2C_PORT_D,I2C_SCL)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="i2c_8h-source.html#l00016">16</a> pliku <a class="el" href="i2c_8h-source.html">i2c.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="cb81e9d5706d5e1192b8f393379a74d9"></a><!-- doxytag: member="i2c.h::I2C_SDA_H" ref="cb81e9d5706d5e1192b8f393379a74d9" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define I2C_SDA_H          </td>
+          <td>(</td>
+&nbsp;</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%">&nbsp;&nbsp;&nbsp;sbi(I2C_PORT_O,I2C_SDA)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="i2c_8h-source.html#l00020">20</a> pliku <a class="el" href="i2c_8h-source.html">i2c.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="4b55fc8f99cebb2fe11f16e80f3c05ce"></a><!-- doxytag: member="i2c.h::I2C_SDA_L" ref="4b55fc8f99cebb2fe11f16e80f3c05ce" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define I2C_SDA_L          </td>
+          <td>(</td>
+&nbsp;</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%">&nbsp;&nbsp;&nbsp;cbi(I2C_PORT_O,I2C_SDA)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="i2c_8h-source.html#l00021">21</a> pliku <a class="el" href="i2c_8h-source.html">i2c.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="3268765774dc252b95c96842229dcd69"></a><!-- doxytag: member="i2c.h::I2C_SDA_RD" ref="3268765774dc252b95c96842229dcd69" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define I2C_SDA_RD          </td>
+          <td>(</td>
+&nbsp;</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%">&nbsp;&nbsp;&nbsp;cbi(I2C_PORT_D,I2C_SDA)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="i2c_8h-source.html#l00015">15</a> pliku <a class="el" href="i2c_8h-source.html">i2c.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="5f618bfb69ff304730335c1cb03feb92"></a><!-- doxytag: member="i2c.h::I2C_SDA_WR" ref="5f618bfb69ff304730335c1cb03feb92" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define I2C_SDA_WR          </td>
+          <td>(</td>
+&nbsp;</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%">&nbsp;&nbsp;&nbsp;sbi(I2C_PORT_D,I2C_SDA)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="i2c_8h-source.html#l00014">14</a> pliku <a class="el" href="i2c_8h-source.html">i2c.h</a>.</p>
+
+</div>
+</div><p>
+<hr><h2>Dokumentacja funkcji</h2>
+<a class="anchor" name="04ce4aaf182aef7f0c9a7ea77cf62e9a"></a><!-- doxytag: member="i2c.h::I2C_read" ref="04ce4aaf182aef7f0c9a7ea77cf62e9a" args="(u08 ack)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a> I2C_read           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a>&nbsp;</td>
+          <td class="paramname"> <em>ack</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Reads 8 bits from I2C <dl compact><dt><b>Parametry:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>ACK</em>&nbsp;</td><td></td></tr>
+  </table>
+</dl>
+<dl class="return" compact><dt><b>Zwraca:</b></dt><dd>Read byte </dd></dl>
+
+<p>Definicja w linii <a class="el" href="i2c_8h-source.html#l00033">33</a> pliku <a class="el" href="i2c_8h-source.html">i2c.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="62d959e4eb956935dc21708bfb8fad78"></a><!-- doxytag: member="i2c.h::I2C_start" ref="62d959e4eb956935dc21708bfb8fad78" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void I2C_start           </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Prepare for transmission 
+<p>Definicja w linii <a class="el" href="i2c_8h-source.html#l00081">81</a> pliku <a class="el" href="i2c_8h-source.html">i2c.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="f6b4e1bf114a26416938dff94e24f3a5"></a><!-- doxytag: member="i2c.h::I2C_stop" ref="f6b4e1bf114a26416938dff94e24f3a5" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void I2C_stop           </td>
+          <td>(</td>
+          <td class="paramtype">void&nbsp;</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Stop transmission 
+<p>Definicja w linii <a class="el" href="i2c_8h-source.html#l00098">98</a> pliku <a class="el" href="i2c_8h-source.html">i2c.h</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="37572ed4ee069451a447780f43edf5c6"></a><!-- doxytag: member="i2c.h::I2C_write" ref="37572ed4ee069451a447780f43edf5c6" args="(u08 b)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a> I2C_write           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a>&nbsp;</td>
+          <td class="paramname"> <em>b</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Write to I2C <dl compact><dt><b>Parametry:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>b</em>&nbsp;</td><td>Byte to be written </td></tr>
+  </table>
+</dl>
+<dl class="return" compact><dt><b>Zwraca:</b></dt><dd></dd></dl>
+
+<p>Definicja w linii <a class="el" href="i2c_8h-source.html#l00114">114</a> pliku <a class="el" href="i2c_8h-source.html">i2c.h</a>.</p>
+
+</div>
+</div><p>
+<hr size="1"><address style="text-align: right;"><small>Wygenerowano Wed Jan 2 10:33:28 2008 dla URZYDZENIE STERUJACE OGRZEWANIEM Z WYKORZYSTANIEM MIKROKONTROLERA AVR programem&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.4 </small></address>
+</body>
+</html>

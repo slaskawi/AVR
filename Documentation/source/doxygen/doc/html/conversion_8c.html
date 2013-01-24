@@ -1,0 +1,235 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>URZYDZENIE STERUJACE OGRZEWANIEM Z WYKORZYSTANIEM MIKROKONTROLERA AVR: Dokumentacja pliku D:/CPP_pjojects/AVR/src/conversion.c</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- Wygenerowano przez Doxygen 1.5.4 -->
+<div class="tabs">
+  <ul>
+    <li><a href="index.html"><span>Strona&nbsp;główna</span></a></li>
+    <li><a href="classes.html"><span>Klasy</span></a></li>
+    <li class="current"><a href="files.html"><span>Pliki</span></a></li>
+  </ul>
+</div>
+<h1>Dokumentacja pliku D:/CPP_pjojects/AVR/src/conversion.c</h1><code>#include &quot;<a class="el" href="global_8h-source.html">global.h</a>&quot;</code><br>
+
+<p>
+<div class="dynheader">
+Wykres zależności załączania dla conversion.c:</div>
+<div class="dynsection">
+</div>
+
+<p>
+<div class="dynheader">
+Ten wykres pokazuje, które pliki bezpośrednio lub pośrednio załączają ten plik:</div>
+<div class="dynsection">
+</div>
+
+<p>
+<a href="conversion_8c-source.html">Idź do kodu źródłowego tego pliku.</a><table border="0" cellpadding="0" cellspacing="0">
+<tr><td></td></tr>
+<tr><td colspan="2"><br><h2>Funkcje</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">char&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="conversion_8c.html#26cda9ea0b9189e787c958cc2a9c314c">nibble2hex</a> (<a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a> val)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="conversion_8c.html#b4bdf376fc511e0ec2cab88abfb7a1e5">word2hex</a> (<a class="el" href="global_8h.html#9e6c91d77e24643b888dbd1a1a590054">u16</a> val, char *s)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="conversion_8c.html#2521d891b4767bcc4a03ece53d89d03e">bcd2bin</a> (<a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a> bcd)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="conversion_8c.html#cbdce4e074ce0b6dcf4ff6074a98ff21">bin2bcd</a> (<a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a> bin)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="conversion_8c.html#1aed87a3feda1dd522659af20524f1d4">byte2dec</a> (<a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a> val, char *s)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="conversion_8c.html#6dec8632b272db29d70274be3077a716">byte2hex</a> (<a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a> val, char *s)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top"><a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="conversion_8c.html#37117a1b3275c0a4973214d2fbb9e0f2">str_to_int</a> (char *s)</td></tr>
+
+</table>
+<hr><h2>Dokumentacja funkcji</h2>
+<a class="anchor" name="2521d891b4767bcc4a03ece53d89d03e"></a><!-- doxytag: member="conversion.c::bcd2bin" ref="2521d891b4767bcc4a03ece53d89d03e" args="(u08 bcd)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a> bcd2bin           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a>&nbsp;</td>
+          <td class="paramname"> <em>bcd</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Converts BCD to binary representation 
+<p>Definicja w linii <a class="el" href="conversion_8c-source.html#l00031">31</a> pliku <a class="el" href="conversion_8c-source.html">conversion.c</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="cbdce4e074ce0b6dcf4ff6074a98ff21"></a><!-- doxytag: member="conversion.c::bin2bcd" ref="cbdce4e074ce0b6dcf4ff6074a98ff21" args="(u08 bin)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a> bin2bcd           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a>&nbsp;</td>
+          <td class="paramname"> <em>bin</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Converts binary number to BCD 
+<p>Definicja w linii <a class="el" href="conversion_8c-source.html#l00049">49</a> pliku <a class="el" href="conversion_8c-source.html">conversion.c</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="1aed87a3feda1dd522659af20524f1d4"></a><!-- doxytag: member="conversion.c::byte2dec" ref="1aed87a3feda1dd522659af20524f1d4" args="(u08 val, char *s)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void byte2dec           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a>&nbsp;</td>
+          <td class="paramname"> <em>val</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&nbsp;</td>
+          <td class="paramname"> <em>s</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>Definicja w linii <a class="el" href="conversion_8c-source.html#l00070">70</a> pliku <a class="el" href="conversion_8c-source.html">conversion.c</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="6dec8632b272db29d70274be3077a716"></a><!-- doxytag: member="conversion.c::byte2hex" ref="6dec8632b272db29d70274be3077a716" args="(u08 val, char *s)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void byte2hex           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a>&nbsp;</td>
+          <td class="paramname"> <em>val</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&nbsp;</td>
+          <td class="paramname"> <em>s</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Converts byte to hexadecimal representation 
+<p>Definicja w linii <a class="el" href="conversion_8c-source.html#l00080">80</a> pliku <a class="el" href="conversion_8c-source.html">conversion.c</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="26cda9ea0b9189e787c958cc2a9c314c"></a><!-- doxytag: member="conversion.c::nibble2hex" ref="26cda9ea0b9189e787c958cc2a9c314c" args="(u08 val)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char nibble2hex           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a>&nbsp;</td>
+          <td class="paramname"> <em>val</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+This file is responsible for conversions for different data types <dl class="author" compact><dt><b>Autor:</b></dt><dd>Sebastian Laskawiec </dd></dl>
+
+<p>Definicja w linii <a class="el" href="conversion_8c-source.html#l00008">8</a> pliku <a class="el" href="conversion_8c-source.html">conversion.c</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="37117a1b3275c0a4973214d2fbb9e0f2"></a><!-- doxytag: member="conversion.c::str_to_int" ref="37117a1b3275c0a4973214d2fbb9e0f2" args="(char *s)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="global_8h.html#4a020a9446b094e07e53376ac939a64d">u08</a> str_to_int           </td>
+          <td>(</td>
+          <td class="paramtype">char *&nbsp;</td>
+          <td class="paramname"> <em>s</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Converts string to int representation 
+<p>Definicja w linii <a class="el" href="conversion_8c-source.html#l00090">90</a> pliku <a class="el" href="conversion_8c-source.html">conversion.c</a>.</p>
+
+</div>
+</div><p>
+<a class="anchor" name="b4bdf376fc511e0ec2cab88abfb7a1e5"></a><!-- doxytag: member="conversion.c::word2hex" ref="b4bdf376fc511e0ec2cab88abfb7a1e5" args="(u16 val, char *s)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void word2hex           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="global_8h.html#9e6c91d77e24643b888dbd1a1a590054">u16</a>&nbsp;</td>
+          <td class="paramname"> <em>val</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&nbsp;</td>
+          <td class="paramname"> <em>s</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Converts word to hex 
+<p>Definicja w linii <a class="el" href="conversion_8c-source.html#l00019">19</a> pliku <a class="el" href="conversion_8c-source.html">conversion.c</a>.</p>
+
+</div>
+</div><p>
+<hr size="1"><address style="text-align: right;"><small>Wygenerowano Wed Jan 2 10:33:28 2008 dla URZYDZENIE STERUJACE OGRZEWANIEM Z WYKORZYSTANIEM MIKROKONTROLERA AVR programem&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.4 </small></address>
+</body>
+</html>
